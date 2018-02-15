@@ -1,0 +1,47 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace zadacha_2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var n = int.Parse(Console.ReadLine());
+            var inputNumber = Console.ReadLine();
+
+            var total = 0;
+            var counter = 0;
+            var wagons = new List<int>();
+            while (inputNumber != "All ofboard!")
+            {
+                var wagon = int.Parse(inputNumber);
+                wagons.Add(wagon);
+                total += wagon;
+                counter++;
+                if (total > n)
+                {
+                    var closest = 0;
+                    double average = Math.Floor(wagons.Average());
+                    for (int i = 0; i < wagons.Count ; i++)
+                    {
+                        if (Math.Abs(average - wagons[i]) < Math.Abs(average - closest))
+                        {
+                            closest = wagons[i];
+                        }
+                    }
+                    wagons.Remove(closest);
+                }
+                inputNumber = Console.ReadLine();
+                
+            }
+            wagons.Reverse();
+            wagons.Add(n);
+            
+            Console.WriteLine(string.Join(" ", wagons));
+        }
+    }
+}

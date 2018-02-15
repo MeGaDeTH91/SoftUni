@@ -1,0 +1,26 @@
+1 2 3 4 5
+exchange 3
+
+1 4 8 2 3 8 15 8 15 1 15
+min even
+
+1 8 2 3
+first 2 even
+
+1 7 17 3
+last 2 odd
+
+if (numCount >= 0 && numCount <= inputNums.Count && oddList.Count > 0)
+if ( numCount >= 0 && numCount < inputNums.Count && oddList.Count == 0 )
+
+17 16 15 14 13 12 11
+max even
+min odd
+first 3 even
+exchange 2
+first 3 odd
+exchange 2
+first 3 odd
+last 3 odd
+max odd
+end

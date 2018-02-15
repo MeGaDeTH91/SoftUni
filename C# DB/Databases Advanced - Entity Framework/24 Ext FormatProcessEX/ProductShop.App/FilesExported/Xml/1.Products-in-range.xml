@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<products>
+  <product name="SEPHORA Acne-Fighting Mattifying Moisturizer" price="1019.28" buyer=" Stewart" />
+  <product name="CVS Therapeutic Menthol Pain Reliever" price="1033.42" buyer="Ann Stevens" />
+  <product name="Ringers" price="1054.37" buyer="Doris Cook" />
+  <product name="Acetic Acid" price="1060.43" buyer="Patrick King" />
+  <product name="LBEL Couleur Luxe Rouge Amplifier XP amplifying SPF 15" price="1069.43" buyer="Fred Allen" />
+  <product name="Growing Pains" price="1077.37" buyer="Clarence Fowler" />
+  <product name="XANTHIUM STRUMARIUM VAR CANADENSE POLLEN" price="1091.38" buyer="Doris Cook" />
+  <product name="ESIKA 3-IN-1 PRO MAKE UP FOUNDATION SPF 20 BASE DE MAQUILLAJE PARA ROSTRO 3-EN-1 PRO FPS 20" price="1097.60" buyer="Rachel Johnson" />
+  <product name="smart sense nighttime cold and flu relief" price="1101.77" buyer="Nicole Martinez" />
+  <product name="PREMIER VALUE ALLERGY" price="1127.61" buyer="Fred Barnes" />
+  <product name="Laser Block 100" price="1135.43" buyer="Gloria Alexander" />
+  <product name="Pollens - Trees, Birch Mix" price="1153.54" buyer=" Mitchell" />
+  <product name="Topical 60 Sec Sodium Fluoride" price="1228.84" buyer="Carl Daniels" />
+  <product name="Ondansetron" price="1249.76" buyer="Sandra Riley" />
+  <product name="IOPE RETIGEN MOISTURE TWIN CAKE NO.21" price="1257.71" buyer="Arthur Reynolds" />
+  <product name="Topex" price="1258.49" buyer="Gloria Alexander" />
+  <product name="SUMATRIPTAN SUCCINATE" price="1265.94" buyer="Wanda Harris" />
+  <product name="Prednisone" price="1285.99" buyer="Benjamin Henry" />
+  <product name="Ibuprofen" price="1305.96" buyer=" Schmidt" />
+  <product name="Hydralazine Hydrochloride" price="1309.72" buyer=" Cunningham" />
+  <product name="Fosphenytoin Sodium" price="1334.06" buyer=" Stewart" />
+  <product name="Archangelica Eucalyptus" price="1334.91" buyer=" Bennett" />
+  <product name="Labetalol Hydrochloride" price="1345.11" buyer=" Thompson" />
+  <product name="MEDICATED DANDRUFF" price="1351.02" buyer="Benjamin Henry" />
+  <product name="EMEND" price="1365.51" buyer=" Bennett" />
+  <product name="Nevirapine" price="1374.72" buyer=" Stewart" />
+  <product name="Warfarin Sodium" price="1379.79" buyer="Patricia Fuller" />
+  <product name="Wintergreen Isopropyl Alcohol" price="1397.57" buyer="Benjamin Henry" />
+  <product name="Etodolac" price="1443.13" buyer="Fred Allen" />
+  <product name="Acid Reducer" price="1443.51" buyer="Fred Allen" />
+  <product name="GEMCITABINE" price="1468.11" buyer="Nicole Martinez" />
+  <product name="Glycopyrrolate" price="1471.43" buyer="Nicole Harris" />
+  <product name="Etoposide" price="1483.96" buyer=" Stewart" />
+  <product name="Alcohol Free Antiseptic" price="1486.07" buyer="Sandra Riley" />
+  <product name="Budpak Hemorrhoid Anesthetic" price="1499.29" buyer=" Thompson" />
+</products>

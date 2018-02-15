@@ -1,0 +1,4 @@
+USE Minions
+
+ALTER TABLE Users
+ADD CONSTRAINT CHCK_Password CHECK(DATALENGTH(Password) >= 5)

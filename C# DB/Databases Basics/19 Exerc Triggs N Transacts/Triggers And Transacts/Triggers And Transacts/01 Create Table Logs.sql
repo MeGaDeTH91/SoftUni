@@ -1,0 +1,15 @@
+CREATE TABLE Logs(
+LogId INT IDENTITY(1, 1) NOT NULL,
+AccountId INT NOT NULL,
+OldSum DECIMAL(15, 2) NOT NULL,
+NewSum DECIMAL(15, 2) NOT NULL,
+CONSTRAINT PK_Logs PRIMARY KEY(LogId)
+)
+GO
+CREATE TRIGGER tr_BalanceEntries ON Accounts AFTER UPDATE
+AS
+BEGIN
+INSERT INTO Logs(AccountId, OldSum, NewSum) 
+SELECT i.Id, d.Balance, i.Balance FROM inserted AS i
+INNER JOIN deleted AS d ON d.Id = i.Id
+END

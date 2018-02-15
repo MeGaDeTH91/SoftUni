@@ -1,0 +1,52 @@
+CREATE TABLE Chats(
+Id INT IDENTITY(1, 1),
+Title VARCHAR(32),
+StartDate DATE,
+IsActive BIT,
+CONSTRAINT PK_Chats PRIMARY KEY(Id)
+)
+
+CREATE TABLE [Credentials](
+Id INT IDENTITY(1, 1),
+Email VARCHAR(30),
+[Password] VARCHAR(20),
+CONSTRAINT PK_Credentials PRIMARY KEY(Id)
+)
+
+CREATE TABLE Locations(
+Id INT IDENTITY(1, 1),
+Latitude FLOAT,
+Longitude FLOAT,
+CONSTRAINT PK_Locations PRIMARY KEY(Id)
+)
+
+CREATE TABLE Users(
+Id INT IDENTITY(1, 1),
+Nickname VARCHAR(25),
+Gender CHAR(1),
+Age INT,
+LocationId INT,
+CredentialId INT UNIQUE,
+CONSTRAINT PK_Users PRIMARY KEY(Id),
+CONSTRAINT FK_UserLocation FOREIGN KEY(LocationId) REFERENCES Locations(Id),
+CONSTRAINT FK_UserCredential FOREIGN KEY(CredentialId) REFERENCES [Credentials](Id)
+)
+
+CREATE TABLE [Messages](
+Id INT IDENTITY(1, 1),
+Content VARCHAR(200),
+SentOn DATE,
+ChatId INT,
+UserId INT,
+CONSTRAINT PK_Messages PRIMARY KEY(Id),
+CONSTRAINT FK_MessChat FOREIGN KEY(ChatId) REFERENCES Chats(Id),
+CONSTRAINT FK_MessUser FOREIGN KEY(UserId) REFERENCES Users(Id)
+)
+
+CREATE TABLE UsersChats(
+UserId INT,
+ChatId INT,
+CONSTRAINT PK_UserChars PRIMARY KEY(ChatId, UserId),
+CONSTRAINT FK_UchUsers FOREIGN KEY(UserId) REFERENCES Users(Id),
+CONSTRAINT FK_UchChats FOREIGN KEY(ChatId) REFERENCES Chats(Id)
+)

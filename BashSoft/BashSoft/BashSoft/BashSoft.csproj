@@ -1,0 +1,46 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <StartupObject>BashSoft.Launcher</StartupObject>
+    <Authors>Stefan Petrov, Martin Taskov</Authors>
+    <Company>KnTeam</Company>
+    <Version>0.0.1</Version>
+    <RepositoryUrl>https://github.com/KnTeam/BashSoft</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/KnTeam/BashSoft</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/KnTeam/BashSoft/blob/master/LICENSE</PackageLicenseUrl>
+    <ApplicationIcon>bashsoft_icon.ico</ApplicationIcon>
+    <Copyright>KnTeam 2018</Copyright>
+    <PackageIconUrl>https://raw.githubusercontent.com/KnTeam/BashSoft/development/BashSoft/BashSoft/bashsoft_icon.ico</PackageIconUrl>
+    <NeutralLanguage>en</NeutralLanguage>
+    <PackageId />
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="bashsoft_icon.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

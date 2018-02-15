@@ -1,0 +1,8 @@
+6
+C:\Windows\Temp\fa23q2fsaf2f.msu;11235
+C:\Windows\Temp\fa23q2fsaf2f.msu;11235
+C:\Windows\Temp\fa23q2fsaf2f.msu;11235
+C:\Windows\Temp\fa23q2fsaf2f.msu;11235
+C:\Windows\Temp\fa23q2fsaf2f.msu;11235
+D:\Windows\Temp\fa23q2fsaf2f.msu;11235
+msu in D:

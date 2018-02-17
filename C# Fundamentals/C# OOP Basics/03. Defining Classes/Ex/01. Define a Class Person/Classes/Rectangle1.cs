@@ -1,6 +1,6 @@
 ﻿using System;
 
-public class Rectangle
+public class Rectangle1
 {
     public string Id { get; set; }
     public double Width { get; set; }
@@ -9,11 +9,11 @@ public class Rectangle
     public double TopLeftX { get; set; }
     public double TopLeftY { get; set; }
 
-    public Rectangle()
+    public Rectangle1()
     {
 
     }
-    public Rectangle(string id, double width, double height, double x, double y)
+    public Rectangle1(string id, double width, double height, double x, double y)
     {
         this.Id = id;
         this.Width = Math.Abs(width);
@@ -22,7 +22,7 @@ public class Rectangle
         this.TopLeftY = y;
     }
 
-    public bool TheyIntersect(Rectangle rectangle)
+    public bool TheyIntersect(Rectangle1 rectangle)
     {
         double firstLeftBorder = this.TopLeftX;
         double firstTopBorder = this.TopLeftY;

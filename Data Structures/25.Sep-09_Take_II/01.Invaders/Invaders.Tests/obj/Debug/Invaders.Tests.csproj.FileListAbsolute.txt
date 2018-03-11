@@ -1,0 +1,12 @@
+D:\SoftUni\Data Structures\25.Sep-09_Take_II\01.Invaders\Invaders.Tests\bin\Debug\Invaders.Tests.dll
+D:\SoftUni\Data Structures\25.Sep-09_Take_II\01.Invaders\Invaders.Tests\bin\Debug\Invaders.Tests.pdb
+D:\SoftUni\Data Structures\25.Sep-09_Take_II\01.Invaders\Invaders.Tests\bin\Debug\Invaders.exe
+D:\SoftUni\Data Structures\25.Sep-09_Take_II\01.Invaders\Invaders.Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+D:\SoftUni\Data Structures\25.Sep-09_Take_II\01.Invaders\Invaders.Tests\bin\Debug\Invaders.pdb
+D:\SoftUni\Data Structures\25.Sep-09_Take_II\01.Invaders\Invaders.Tests\bin\Debug\Invaders.exe.config
+D:\SoftUni\Data Structures\25.Sep-09_Take_II\01.Invaders\Invaders.Tests\obj\Debug\Invaders.Tests.csprojResolveAssemblyReference.cache
+D:\SoftUni\Data Structures\25.Sep-09_Take_II\01.Invaders\Invaders.Tests\obj\Debug\Invaders.Tests.csproj.CoreCompileInputs.cache
+D:\SoftUni\Data Structures\25.Sep-09_Take_II\01.Invaders\Invaders.Tests\obj\Debug\Invaders.Tests.dll
+D:\SoftUni\Data Structures\25.Sep-09_Take_II\01.Invaders\Invaders.Tests\obj\Debug\Invaders.Tests.pdb
+D:\SoftUni\Data Structures\25.Sep-09_Take_II\01.Invaders\Invaders.Tests\bin\Debug\PowerCollections.dll
+D:\SoftUni\Data Structures\25.Sep-09_Take_II\01.Invaders\Invaders.Tests\bin\Debug\PowerCollections.xml

@@ -69,7 +69,14 @@ public class RaceTower
 
         if (numberOfLaps > this.remainingLaps)
         {
-            throw new ArgumentException($"There is no time! On lap {currentLap}.");
+            try
+            {
+                throw new ArgumentException($"There is no time! On lap {currentLap}.");
+            }
+            catch (Exception e)
+            {
+                return e.Message;
+            }
         }
         
         for (int lap = 0; lap < numberOfLaps; lap++)

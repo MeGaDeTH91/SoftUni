@@ -34,15 +34,12 @@ public class RaceTower
     }
     public void RegisterDriver(List<string> commandArgs)
     {
-        string name = commandArgs[1];
         try
         {
+            string name = commandArgs[1];
             this.Drivers.Add(name, this.DriverFactory.RegisterDriver(commandArgs));
         }
-        catch (Exception)
-        {
-
-        }
+        catch { }
         
     }
 
@@ -72,13 +69,14 @@ public class RaceTower
 
         if (numberOfLaps > this.remainingLaps)
         {
-            throw new ArgumentException($"There is no time! On lap {this.currentLap}.");
+            throw new ArgumentException($"There is no time! On lap {currentLap}.");
         }
         
         for (int lap = 0; lap < numberOfLaps; lap++)
         {
             foreach (var driver in this.Drivers)
             {
+                //Lap passes so we add time, reduce fuel and degradate tyres
                 try
                 {
                     driver.Value.IncreaseTime(this.TotalTrackLength);
@@ -90,78 +88,16 @@ public class RaceTower
                     driver.Value.Status = failure.Message;
                 }
             }
-            
+
             this.currentLap++;
             this.remainingLaps--;
 
             this.SortedDrivers = this.Drivers.OrderByDescending(x => x.Value.TotalTime).Select(x => x.Value).ToList();
 
-            for (int index = 0; index < this.SortedDrivers.Count - 1; index++)
-            {
-                if(index == this.SortedDrivers.Count - 1)
-                {
-                    break;
-                }
-                var driver = this.SortedDrivers[index];
-                var nextDriver = this.SortedDrivers[index + 1];
+            //We check for overtakes
+            TryToOvertake(sb);
 
-                bool weHaveOvertake = false;
-
-                try
-                {
-                    var timeDifference = driver.TotalTime - nextDriver.TotalTime;
-
-                    bool aggressiveDriver = driver is AggressiveDriver && driver.Car.Tyre is UltrasoftTyre && timeDifference <= 3;
-
-                    bool enduranceDriver = driver is EnduranceDriver && driver.Car.Tyre is HardTyre && timeDifference <= 3;
-                    
-                    if (aggressiveDriver)
-                    {
-                        if (this.Weather == "Foggy")
-                        {
-                            throw new ArgumentException("Crashed");
-                        }
-                        this.Drivers[driver.Name].OverTake(3.0d);
-                        this.Drivers[nextDriver.Name].LosePosition(3.0d);
-                        AppendOverTakeToSb(sb, driver.Name, nextDriver.Name);
-                        weHaveOvertake = true;
-                    }
-                    else if (enduranceDriver)
-                    {
-                        if (this.Weather == "Rainy")
-                        {
-                            throw new ArgumentException("Crashed");
-                        }
-                        this.Drivers[driver.Name].OverTake(3.0d);
-                        this.Drivers[nextDriver.Name].LosePosition(3.0d);
-                        AppendOverTakeToSb(sb, driver.Name, nextDriver.Name);
-                        weHaveOvertake = true;
-                    }
-                    else if (timeDifference <= 2)
-                    {
-                        if (IsAggressiveAndFoggy(driver.GetType().Name))
-                        {
-                            throw new ArgumentException("Crashed");
-                        }
-                        if (IsEnduranceAndRainy(driver.GetType().Name))
-                        {
-                            throw new ArgumentException("Crashed");
-                        }
-                        this.Drivers[driver.Name].OverTake(2.0d);
-                        this.Drivers[nextDriver.Name].LosePosition(2.0d);
-                        AppendOverTakeToSb(sb, driver.Name, nextDriver.Name);
-                        weHaveOvertake = true;
-                    }
-                    if (weHaveOvertake)
-                    {
-                        index++;
-                    }
-                }
-                catch (Exception e)
-                {
-                    this.Drivers[driver.Name].Status = e.Message;
-                }
-            }
+            //We put the drivers that failed in the CrashedDrivers collection
             var temp = this.Drivers.Where(x => x.Value.Status != "Racing").Select(x => x.Value).ToList();
             this.CrashedDrivers.AddRange(temp);
 
@@ -169,10 +105,9 @@ public class RaceTower
             {
                 this.Drivers.Remove(driver.Name);
             }
-            
         }
 
-        if(remainingLaps == 0)
+        if (remainingLaps == 0)
         {
             var driver = this.Drivers.OrderBy(x => x.Value.TotalTime).FirstOrDefault();
             sb.AppendLine($"{driver.Key} wins the race for {driver.Value.TotalTime:F3} seconds.");
@@ -181,19 +116,69 @@ public class RaceTower
         return sb.ToString().Trim();
     }
 
-    private void AppendOverTakeToSb(StringBuilder sb, string driver, string nextDriver)
+    private void TryToOvertake(StringBuilder sb)
     {
-        sb.AppendLine($"{driver} has overtaken {nextDriver} on lap {this.currentLap}.");
-    }
+        for (int index = 0; index < this.SortedDrivers.Count - 1; index++)
+        {
+            var driver = this.SortedDrivers[index];
+            var nextDriver = this.SortedDrivers[index + 1];
 
-    private bool IsEnduranceAndRainy(string driverType)
-    {
-        return driverType == "EnduranceDriver" && this.Weather == "Rainy";
-    }
+            bool weHaveOvertake = false;
 
-    private bool IsAggressiveAndFoggy(string driverType)
-    {
-        return driverType == "AggressiveDriver" && this.Weather == "Foggy";
+            try
+            {
+                var timeDifference = driver.TotalTime - nextDriver.TotalTime;
+
+                bool aggressiveDriverWithUltrasoft = driver is AggressiveDriver && driver.Car.Tyre is UltrasoftTyre && timeDifference <= 3;
+                bool enduranceDriverWithHard = driver is EnduranceDriver && driver.Car.Tyre is HardTyre && timeDifference <= 3;
+
+                if (aggressiveDriverWithUltrasoft)
+                {
+                    if (this.Weather == "Foggy")
+                    {
+                        throw new ArgumentException("Crashed");
+                    }
+                    this.Drivers[driver.Name].OverTake(3.0d);
+                    this.Drivers[nextDriver.Name].LosePosition(3.0d);
+                    AppendOverTakeToSb(sb, driver.Name, nextDriver.Name);
+                    weHaveOvertake = true;
+                }
+                else if (enduranceDriverWithHard)
+                {
+                    if (this.Weather == "Rainy")
+                    {
+                        throw new ArgumentException("Crashed");
+                    }
+                    this.Drivers[driver.Name].OverTake(3.0d);
+                    this.Drivers[nextDriver.Name].LosePosition(3.0d);
+                    AppendOverTakeToSb(sb, driver.Name, nextDriver.Name);
+                    weHaveOvertake = true;
+                }
+                else if (timeDifference <= 2)
+                {
+                    if (IsAggressiveAndFoggy(driver.GetType().Name))
+                    {
+                        throw new ArgumentException("Crashed");
+                    }
+                    if (IsEnduranceAndRainy(driver.GetType().Name))
+                    {
+                        throw new ArgumentException("Crashed");
+                    }
+                    this.Drivers[driver.Name].OverTake(2.0d);
+                    this.Drivers[nextDriver.Name].LosePosition(2.0d);
+                    AppendOverTakeToSb(sb, driver.Name, nextDriver.Name);
+                    weHaveOvertake = true;
+                }
+                if (weHaveOvertake)
+                {
+                    index++;
+                }
+            }
+            catch (Exception e)
+            {
+                this.Drivers[driver.Name].Status = e.Message;
+            }
+        }
     }
 
     public string GetLeaderboard()
@@ -221,4 +206,18 @@ public class RaceTower
         this.Weather = newWeather;
     }
 
+    private void AppendOverTakeToSb(StringBuilder sb, string driver, string nextDriver)
+    {
+        sb.AppendLine($"{driver} has overtaken {nextDriver} on lap {this.currentLap}.");
+    }
+
+    private bool IsEnduranceAndRainy(string driverType)
+    {
+        return driverType == "EnduranceDriver" && this.Weather == "Rainy";
+    }
+
+    private bool IsAggressiveAndFoggy(string driverType)
+    {
+        return driverType == "AggressiveDriver" && this.Weather == "Foggy";
+    }
 }

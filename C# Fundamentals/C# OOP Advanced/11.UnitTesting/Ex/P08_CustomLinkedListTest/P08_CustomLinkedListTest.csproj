@@ -10,4 +10,8 @@
     <PackageReference Include="NUnit3TestAdapter" Version="3.10.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\P08_CustomLinkedList\P08_CustomLinkedList.csproj" />
+  </ItemGroup>
+
 </Project>

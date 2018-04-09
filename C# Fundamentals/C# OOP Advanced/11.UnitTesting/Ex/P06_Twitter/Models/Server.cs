@@ -1,6 +1,6 @@
 ﻿namespace P06_Twitter.Models
 {
-    using System;
+    using P06_Twitter.Contracts;
     using System.Collections.Generic;
 
     public class Server : IServer

@@ -1,4 +1,4 @@
-﻿namespace P06_Twitter
+﻿namespace P06_Twitter.Contracts
 {
     public interface ITweet
     {

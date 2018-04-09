@@ -7,12 +7,14 @@
     {
         private IServer server;
         private string testIfCorrectMessageIsWrittenOnConsole;
+        private int CountOfInvokedMethods;
 
         public string ClientName => "MicrowaveOven";
 
         public Client(IServer server)
         {
             this.server = server;
+            this.CountOfInvokedMethods = 0;
         }
 
         public void ReceiveTweet(ITweet tweet)
@@ -26,11 +28,13 @@
         {
             testIfCorrectMessageIsWrittenOnConsole = message;
             Console.WriteLine(message);
+            this.CountOfInvokedMethods++;
         }
 
         public void SendToServer(string message)
         {
             this.server.SaveInServerDatabase(message);
+            this.CountOfInvokedMethods++;
         }        
     }
 }

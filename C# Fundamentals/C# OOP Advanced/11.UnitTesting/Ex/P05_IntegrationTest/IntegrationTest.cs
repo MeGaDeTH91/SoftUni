@@ -34,7 +34,9 @@
             expectedCategories.Add(parentCategory);
             expectedCategories.Add(childCategory);
 
-            List<Category> actualCategories = (List<Category>)integrationType.GetField("categories", BindingFlags.Instance | BindingFlags.NonPublic).GetValue(integrationInstance);
+            HashSet<Category> actualHashCategories = (HashSet<Category>)integrationType.GetField("categories", BindingFlags.Instance | BindingFlags.NonPublic).GetValue(integrationInstance);
+
+            List<Category> actualCategories = actualHashCategories.ToList();
 
             int expectedCategoriesCount = expectedCategories.Count;
             int actualCategoriesCount = actualCategories.Count;
@@ -64,7 +66,9 @@
 
             integrationInstance.AssignChildCategory(parentCategory, childCategory);
 
-            List<Category> actualCategories = (List<Category>)integrationType.GetField("categories", BindingFlags.Instance | BindingFlags.NonPublic).GetValue(integrationInstance);
+            HashSet<Category> actualHashCategories = (HashSet<Category>)integrationType.GetField("categories", BindingFlags.Instance | BindingFlags.NonPublic).GetValue(integrationInstance);
+
+            List<Category> actualCategories = actualHashCategories.ToList();
 
             Category parentActualCategory = actualCategories[0];
             Category childActualCategory = actualCategories[1];
@@ -90,7 +94,9 @@
 
             integrationInstance.AssignUserToSpecificCategory(category, testUserDahaka);
 
-            List<Category> actualCategories = (List<Category>)integrationType.GetField("categories", BindingFlags.Instance | BindingFlags.NonPublic).GetValue(integrationInstance);
+            HashSet<Category> actualHashCategories = (HashSet<Category>)integrationType.GetField("categories", BindingFlags.Instance | BindingFlags.NonPublic).GetValue(integrationInstance);
+
+            List<Category> actualCategories = actualHashCategories.ToList();
 
             Category actualCategoryWithSingleUser = actualCategories[0];
             User actualUserTakenFromCategory = actualCategoryWithSingleUser.Users.FirstOrDefault(x => x.Name == testUserDahaka.Name);
@@ -129,7 +135,9 @@
 
             integrationInstance.RemoveOneOrMoreCategories(parentCategory);
 
-            List<Category> actualCategories = (List<Category>)integrationType.GetField("categories", BindingFlags.Instance | BindingFlags.NonPublic).GetValue(integrationInstance);
+            HashSet<Category> actualHashCategories = (HashSet<Category>)integrationType.GetField("categories", BindingFlags.Instance | BindingFlags.NonPublic).GetValue(integrationInstance);
+
+            List<Category> actualCategories = actualHashCategories.ToList();
 
             foreach (var category in actualCategories)
             {

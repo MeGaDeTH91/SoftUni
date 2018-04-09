@@ -7,11 +7,11 @@
 
     public class Integration
     {
-        private List<Category> categories;
+        private HashSet<Category> categories;
 
         public Integration()
         {
-            this.categories = new List<Category>();
+            this.categories = new HashSet<Category>();
         }
 
         public void AddCategory(Category category)
@@ -28,6 +28,7 @@
                 while (subCategories.Count > 0)
                 {
                     Category currentCategory = subCategories[0];
+                    this.AddCategory(currentCategory);
                     cat.RemoveSubCategoryFromCategory(currentCategory);
                 }
                 this.categories.Remove(cat);

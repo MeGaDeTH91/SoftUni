@@ -21,7 +21,12 @@ public class CommandInterpreter : ICommandInterpreter
 
         Assembly assembly = Assembly.GetCallingAssembly();
 
-        Type commandType = Type.GetType(commandName + Constants.CommandSuffix);
+        Type commandType = assembly.GetTypes().FirstOrDefault(x => x.Name == commandName + Constants.CommandSuffix);
+
+        if (!typeof(ICommand).IsAssignableFrom(commandType))
+        {
+            throw new InvalidOperationException(string.Format(Constants.InvalidCommand, commandName));
+        }
 
         ConstructorInfo ctor = commandType.GetConstructors().First();
 

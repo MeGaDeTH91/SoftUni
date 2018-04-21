@@ -31,4 +31,6 @@
     public const string HarvesterControllerField = "harvesterController";
 
     public const string ProviderControllerField = "providerController";
+
+    public const string InvalidCommand = "{0}Command is not an ICommand!";
 }

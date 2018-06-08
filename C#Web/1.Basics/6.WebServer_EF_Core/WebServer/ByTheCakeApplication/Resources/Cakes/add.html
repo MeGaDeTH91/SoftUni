@@ -1,0 +1,24 @@
+﻿<a href="/">Back to home</a>
+
+<form method="post">
+    Name:
+    <input type="text" name="name" placeholder="Type Name" />
+    <br />
+    Price: 
+    <input type="number" min="0" name="price" placeholder="Type Price" />
+    <br />
+    Picture URL:
+    <input type="text" name="path" placeholder="Type URL" />
+    <br />
+    <input type="submit" value="Add Cake" />
+</form>
+
+<div style="display: {{{showResult}}}">
+    Cake added to database:
+    Name: {{{name}}};
+    Price: ${{{price}}};
+</div>
+
+<div style="display: {{{showError}}}; color: red">
+{{{error}}}
+</div>

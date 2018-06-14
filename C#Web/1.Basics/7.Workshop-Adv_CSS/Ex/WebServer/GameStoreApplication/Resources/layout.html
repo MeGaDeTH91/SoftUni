@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Game Store cool store">
+    <meta name="keywords" content="games, buy">
+    <meta name="author" content="Your name">
+    <title>Game Store</title>
+    <link href="/Styles/bootstrap.css" rel="stylesheet"/>
+    <link href="/Styles/bootstrap-grid.css" rel="stylesheet" />
+    <link href="/Styles/bootstrap-reboot.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-light bg-warning">
+            <div class="container">
+                <a class="navbar-brand" href="/">SoftUni Store</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" name="cart" href="/show-cart">Cart</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav nav" style="display: {{{anonymousDisplay}}}">
+                        <li class="nav-item">
+                            <a class="nav-link" name="login" href="/login">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" name="register" href="/register">Register</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav nav" style="display: {{{authDisplay}}}">
+                        <li class="nav-item dropdown" style="display: {{{adminDisplay}}}">
+                            <a class="nav-link dropdown-toggle" href="http://example.com" id="AdminDropdownMenuLink"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Admin
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="/add-game">Add Game</a>
+                                <a class="dropdown-item" href="/admin-games">All Games</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/logout" >Logout</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+    <br />
+
+    <!--Alert-->
+    <!--<div class="col-4 ml-auto mr-auto text-center">
+        <div class="alert alert-danger" role="alert" style="display: {{{showError}}}">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            {{{error}}}
+        </div>
+    </div>-->
+    {{{content}}}
+    <footer>
+        <div class="container modal-footer">
+            <p>&copy; 2017 - Software University Foundation</p>
+        </div>
+    </footer>
+
+    <script src="/Scripts/jquery-3.1.1.min.js"></script>
+    <script src="/Scripts/popper.js"></script>
+    <script src="/Scripts/bootstrap.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+﻿<main>
+    <!--Alert-->
+    <div class="col-4 ml-auto mr-auto text-center">
+        <div class="alert alert-danger" role="alert" style="display: {{{showError}}}">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            {{{error}}}
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="display-3">{{{title}}}</h1>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/{{{trailer}}}" frameborder="0"
+                        allowfullscreen></iframe>
+                <p>{{{description}}}</p>
+                <p><strong>Price</strong> - {{{price}}}&euro;</p>
+                <p><strong>Size</strong> - {{{size}}} GB</p>
+                <p><strong>Release Date</strong> - {{{released}}}</p>
+
+                <a class="btn btn-outline-primary" href="/">Back</a>
+                
+                <span style="display: {{{displayAdminBtn}}}"">{{{adminButtons}}}</span>
+                <span style="display: {{{displayUserBtn}}}" ">{{{userButtons}}}</span>
+                <span style="display: {{{displayGuestBtn}}}" ">{{{guestButtons}}}</span>
+            </div>
+        </div>
+    </div>
+</main>
+<br />

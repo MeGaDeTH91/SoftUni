@@ -1,0 +1,48 @@
+﻿<main class="col-4 ml-auto mr-auto text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="text-center"><h1 class="display-3">Register</h1></div>
+                <br />
+                <form method="POST">
+
+                    <div class="form-group row">
+                        <label class="sr-only">Email</label>
+                        <input class="form-control" name="email" type="text" placeholder="somebody@example.com" />
+                        <div class="alert alert-warning" style="display: {{{EmailErrorDisplay}}}">
+                            {{{EmailError}}}
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="sr-only">Full Name</label>
+                        <input pattern="^[a-zA-Z -.]+$" class="form-control" name="fullName" type="text" placeholder="Full Name" />
+                        <div class="alert alert-warning" style="display: {{{FullNameErrorDisplay}}}">
+                            {{{FullNameError}}}
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="sr-only">Password</label>
+                        <input pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" name="password" type="password" class="form-control" placeholder="Password" />
+                        <div class="alert alert-warning" style="display: {{{PasswordHashErrorDisplay}}}">
+                            {{{PasswordHashError}}}
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="sr-only">Confirm Password</label>
+                        <input pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" name="confirmPassword" class="form-control" type="password" placeholder="Confirm Password" />
+                        <div class="alert alert-warning" style="display: {{{ConfirmPasswordHashErrorDisplay}}}">
+                            {{{ConfirmPasswordHashError}}}
+                        </div>
+                    </div>
+
+                    <input type="submit" class="btn btn-outline-warning btn-lg btn-block"
+                           value="Register" />
+                </form>
+                <br />
+            </div>
+        </div>
+    </div>
+</main>

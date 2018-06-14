@@ -1,0 +1,37 @@
+﻿<main>
+    <!--Alert-->
+    <div class="col-4 ml-auto mr-auto text-center">
+        <div class="alert alert-danger" role="alert" style="display: {{{showError}}}">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            {{{error}}}
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="text-center">
+                    <h1 class="display-3">Your Cart</h1>
+                </div>
+                <br />
+
+
+                {{{games}}}
+
+                <br />
+                <div class="col-8 ml-auto mr-auto mt-5 text-center">
+                    <h1><strong>Total Price - </strong> {{{totalPrice}}} &euro;</h1>
+                </div>
+                <div class="col-8  ml-auto mr-auto my-3">
+                    <form method="post">
+
+                        <input type="submit" class="btn btn-success btn-lg btn-block" value="Order" />
+                    </form>
+                </div>
+                <br />
+            </div>
+        </div>
+    </div>
+</main>

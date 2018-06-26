@@ -21,7 +21,7 @@
 
         protected ViewModel Model { get; set; }
 
-        protected Authentication User { get; set; }
+        public Authentication User { get; set; }
 
         public IHttpRequest Request { get; set; }
 

@@ -16,7 +16,7 @@
 
         public class KittenConstraints
         {
-            public const int NameMinLength = 4;
+            public const int NameMinLength = 3;
             public const int NameMaxLength = 120;
 
             public const int MinAge = 0;

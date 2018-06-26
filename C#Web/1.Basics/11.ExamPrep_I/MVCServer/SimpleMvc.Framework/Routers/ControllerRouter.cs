@@ -12,12 +12,14 @@
     using WebServer.Enums;
     using WebServer.Http.Contracts;
     using WebServer.Http.Response;
+    using SimpleMvc.App.Attributes;
 
     public class ControllerRouter : IHandleable
     {
         private const string DefaultPath = "/";
         private const string DefaultControllerName = "HomeController";
         private const string DefaultActionName = "Index";
+        private const string UnauthorizedMessage = "You are not authorized to perform this action!";
 
         public IHttpResponse Handle(IHttpRequest request)
         {
@@ -47,15 +49,33 @@
             }
             var controller = this.GetController(controllerName, request);
 
-            MethodInfo action = this.GetMethod(requestMethod, controller, actionName);
-
-            if (action == null)
+            try
             {
-                return new NotFoundResponse();
-            }
+                MethodInfo action = this.GetMethod(requestMethod, controller, actionName);
 
-            var actionParameters = this.MapActionParameters(action, getParams, postParams);
-            return this.PrepareResponse(controller, action, actionParameters);
+                if (action == null)
+                {
+                    return new NotFoundResponse();
+                }
+
+                var authorizationAtt = action
+                    .GetCustomAttributes()
+                    .Where(att => att is PreAuthorizeAttribute)
+                    .Cast<PreAuthorizeAttribute>()
+                    .FirstOrDefault();
+
+                if (authorizationAtt != null && !controller.User.IsAuthenticated)
+                {
+                    throw new InvalidOperationException(UnauthorizedMessage);
+                }
+
+                var actionParameters = this.MapActionParameters(action, getParams, postParams);
+                return this.PrepareResponse(controller, action, actionParameters);
+            }
+            catch (InvalidOperationException e)
+            {
+                return new PreAuthorizeAttribute().GetResponse(e.Message);
+            }
         }
 
         private IHttpResponse PrepareResponse(

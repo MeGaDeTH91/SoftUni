@@ -9,7 +9,7 @@ using SimpleMvc.Data;
 namespace SimpleMvc.Data.Migrations
 {
     [DbContext(typeof(KittenDbContext))]
-    [Migration("20180624181936_Initial")]
+    [Migration("20180625215053_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,6 +25,8 @@ namespace SimpleMvc.Data.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("ImageUrl");
 
                     b.Property<string>("Name")
                         .IsRequired();

@@ -10,12 +10,14 @@
 
     public class UsersController : BaseController
     {
-        private const string ErrorKey = "error";
-        private const string ErrorMessage = "Invalid username and / or password";
+        private const string InvalidCredentialsMessage = "Invalid username and / or password";
+        private const string RegisterErrorMessage = "Please check your input data!";
+        private const string LogoutErrorMessage = "You must login before you attempt to logout.";
 
         [HttpGet]
         public IActionResult Register()
         {
+            this.Model.Data[ErrorKey] = HideMessageValue;
             return View();
         }
 
@@ -24,6 +26,8 @@
         {
             if (!this.IsValidModel(model))
             {
+                this.Model.Data[ErrorKey] = ShowMessageValue;
+                this.Model.Data[ErrorMessageKey] = RegisterErrorMessage;
                 return View();
             }
 
@@ -37,6 +41,14 @@
 
             using (this.Context)
             {
+                var users = this.Context.Users.ToList();
+
+                if (users.Any(x => x.Email == userToAdd.Email || x.Username == userToAdd.Username))
+                {
+                    this.Model.Data[ErrorKey] = ShowMessageValue;
+                    this.Model.Data[ErrorMessageKey] = RegisterErrorMessage;
+                    return View();
+                }
                 this.Context.Users.Add(userToAdd);
                 this.Context.SaveChanges();
             }
@@ -49,13 +61,20 @@
         [HttpGet]
         public IActionResult Login()
         {
-            this.Model.Data[ErrorKey] = string.Empty;
+            this.Model.Data[ErrorKey] = HideMessageValue;
             return View();
         }
 
         [HttpPost]
         public IActionResult Login(LoginUserBindingModel model)
         {
+            if (!this.IsValidModel(model))
+            {
+                this.Model.Data[ErrorKey] = ShowMessageValue;
+                this.Model.Data[ErrorMessageKey] = InvalidCredentialsMessage;
+                return View();
+            }
+
             string hashedPass = PasswordUtilities.GenerateHash(model.Password);
 
             using (this.Context)
@@ -64,7 +83,8 @@
 
                 if(user == null)
                 {
-                    this.Model.Data[ErrorKey] = ErrorMessage;
+                    this.Model.Data[ErrorKey] = ShowMessageValue;
+                    this.Model.Data[ErrorMessageKey] = InvalidCredentialsMessage;
                     return this.View();
                 }
                 else
@@ -73,6 +93,20 @@
                     return RedirectToHome();
                 }
             }
+        }
+
+        [HttpGet]
+        public IActionResult Logout()
+        {
+            if (!this.User.IsAuthenticated)
+            {
+                this.Model.Data[ErrorKey] = LogoutErrorMessage;
+                return RedirectToAction(LoginRoute);
+            }
+
+            this.SignOut();
+
+            return RedirectToHome();
         }
     }
 }

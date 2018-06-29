@@ -22,6 +22,7 @@
         private const string DefaultControllerName = "HomeController";
         private const string DefaultActionName = "Index";
         private const string UnauthorizedMessage = "You are not authorized to perform this action!";
+        private const string HomeRoute = "/users/login";
 
         public IHttpResponse Handle(IHttpRequest request)
         {
@@ -71,7 +72,7 @@
 
                 if (authorizationAtt != null && !controller.SessionUser.IsAuthenticated)
                 {
-                    throw new UnauthorizedException(UnauthorizedMessage);
+                    return new RedirectResponse(HomeRoute);
                 }
 
                 var parameterValidator = new ParameterValidator();

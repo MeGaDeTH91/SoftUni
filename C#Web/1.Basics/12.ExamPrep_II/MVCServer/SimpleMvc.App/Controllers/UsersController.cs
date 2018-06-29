@@ -6,6 +6,7 @@
     using SimpleMvc.App.BindingModels;
     using SimpleMvc.Common;
     using SimpleMvc.Framework.Attributes.Methods;
+    using SimpleMvc.Framework.Attributes.Security;
     using SimpleMvc.Framework.Interfaces;
     using SimpleMvc.Models;
     
@@ -96,6 +97,7 @@
         }
 
         [HttpGet]
+        [PreAuthorize]
         public IActionResult Logout()
         {
             if (!this.SessionUser.IsAuthenticated)
@@ -110,6 +112,7 @@
         }
 
         [HttpGet]
+        [PreAuthorize]
         public IActionResult Profile()
         {
             if (!this.SessionUser.IsAuthenticated)

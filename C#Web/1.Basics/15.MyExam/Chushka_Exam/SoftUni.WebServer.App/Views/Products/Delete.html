@@ -1,0 +1,30 @@
+﻿{{{error}}}
+<main>
+    <h1 class="text-center">Delete Product</h1>
+    <hr class=" hr-2 bg-dark" />
+    <form class="mx-auto half-width" method="post" action="/products/delete">
+        <input type="hidden" name="Id" value="{{{id}}}" />
+        <div class="form-group">
+            <label for="username">Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Name..." value="{{{name}}}" name="Name" disabled>
+        </div>
+        <div class="form-group">
+            <label for="password">Price</label>
+            <input type="text" class="form-control" id="price" placeholder="Price..." value="{{{price}}}" name="Price" disabled>
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea class="form-control" id="description" placeholder="Description..." value="{{{description}}}" name="Description" disabled></textarea>
+        </div>
+        <h1 class="text-center">Product Type</h1>
+        <hr class=" hr-1 bg-dark" />
+        <div class="text-center" disabled="">
+            {{{radioButtons}}}
+        </div>
+        <hr class=" hr-1 bg-dark" />
+        <div class="button-holder d-flex justify-content-center">
+            <button type="submit" class="btn chushka-bg-color">Delete</button>
+            <a class="btn chushka-bg-color" style="margin-left: 8%" href="/home/index">Cancel</a>
+        </div>
+    </form>
+</main>

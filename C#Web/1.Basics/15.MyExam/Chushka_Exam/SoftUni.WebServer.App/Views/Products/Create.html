@@ -1,0 +1,32 @@
+﻿{{{error}}}
+<main>
+    <h1 class="text-center">Create Product</h1>
+    <hr class=" hr-2 bg-dark" />
+    <form class="mx-auto half-width" method="post" action="/products/create">
+        <div class="form-group">
+            <label for="username">Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Name..." name="Name">
+        </div>
+        <div class="form-group">
+            <label for="price">Price</label>
+            <input type="text" class="form-control" id="price" placeholder="Price..." name="Price">
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea type="text" class="form-control" id="description" placeholder="Description..." name="Description"></textarea>
+        </div>
+        <h1 class="text-center">Product Type</h1>
+        <hr class="hr-1 bg-dark" />
+        <div class="text-center">
+           <input type="radio" id="food" name="ProductType" value="Food"> Food
+           <input style="margin-left: 8%" id="domestic" type="radio" name="ProductType" value="Domestic"> Domestic
+           <input style="margin-left: 8%" id="health" type="radio" name="ProductType" value="Health"> Health
+           <input style="margin-left: 8%" id="cosmetic" type="radio" name="ProductType" value="Cosmetic"> Cosmetic
+           <input style="margin-left: 8%" id="other" type="radio" name="ProductType" value="Other"> Other
+        </div>
+        <hr class=" hr-1 bg-dark" />
+        <div class="button-holder d-flex justify-content-center">
+            <button type="submit" class="btn chushka-bg-color">Create</button>
+        </div>
+    </form>
+</main>

@@ -1,0 +1,30 @@
+﻿{{{error}}}
+<main>
+    <h1 class="text-center">Edit Product</h1>
+    <hr class=" hr-2 bg-dark" />
+    <form class="mx-auto half-width" method="post" action="/products/edit">
+        <input type="hidden" name="Id" value="{{{id}}}" />
+        <div class="form-group">
+            <label for="username">Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Name..." value="{{{name}}}" name="Name">
+        </div>
+        <div class="form-group">
+            <label for="password">Price</label>
+            <input type="text" class="form-control" id="price" placeholder="Price..." value="{{{price}}}" name="Price">
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea type="text" class="form-control" id="description" placeholder="Description..." name="Description">{{{description}}}</textarea>
+        </div>
+        <h1 class="text-center">Product Type</h1>
+        <hr class=" hr-1 bg-dark" />
+        <div class="text-center">
+            {{{radioButtons}}}
+        </div>
+        <hr class=" hr-1 bg-dark" />
+        <div class="button-holder d-flex justify-content-center">
+            <button type="submit" class="btn chushka-bg-color">Edit</button>
+            <a class="btn chushka-bg-color" style="margin-left: 8%" href="/home/index">Cancel</a>
+        </div>
+    </form>
+</main>

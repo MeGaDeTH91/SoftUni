@@ -46,7 +46,8 @@
                 this.Context.SaveChanges();
             }
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToRoute("default",
+                new { controller = "Cats", action = "Details", id = cat.Id});
         }
 
         [HttpGet]

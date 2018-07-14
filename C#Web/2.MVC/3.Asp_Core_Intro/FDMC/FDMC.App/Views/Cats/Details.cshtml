@@ -1,0 +1,14 @@
+﻿@using FDMC.Models;
+
+@model CatViewModel
+
+@{
+    ViewData["Title"] = $"{Model.Name} - Details";
+}
+
+<div>
+    <h2>@Model.Name</h2>
+    <img class="img-thumbnail" src="@Model.ImageURL" alt="@Model.Name" style="max-width: 300px" />
+    <h4>Age: @Model.Age</h4>
+    <h4>Breed: @Model.Breed</h4>
+</div>

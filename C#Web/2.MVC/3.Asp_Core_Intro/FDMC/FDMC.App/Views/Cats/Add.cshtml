@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = $"Add Cat";
+}
+
+<h2>Add Cat</h2>
+
+<form method="post" action="/cats/add">
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" placeholder="Name..." name="Name">
+    </div>
+    <div class="form-group">
+        <label for="age">Age</label>
+        <input type="text" class="form-control" id="age" placeholder="Age..." name="Age">
+    </div>
+    <div class="form-group">
+        <label for="breed">Breed</label>
+        <input type="text" class="form-control" id="breed" placeholder="Breed..." name="Breed">
+    </div>
+    <div class="form-group">
+        <label for="imageurl">ImageUrl</label>
+        <input type="text" class="form-control" id="imageurl" placeholder="ImageUrl..." name="ImageURL">
+    </div>
+    <div>
+        <button type="submit">Add Cat</button>
+    </div>
+</form>

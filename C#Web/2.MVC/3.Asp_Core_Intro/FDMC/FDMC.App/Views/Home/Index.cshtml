@@ -1,0 +1,18 @@
+﻿@using FDMC.Models;
+@model IEnumerable<Cat>
+
+@{
+    ViewData["Title"] = "Home";
+}
+
+<h1>Welcome To FDMC!</h1>
+<ul>
+    @foreach (var cat in Model)
+    {
+        <li><a asp-controller="Cats" asp-action="Details" asp-route-id="@cat.Id">@cat.Name</a></li>
+    }
+</ul>
+
+<div>
+    <button type="button" class="btn waves-effect waves-yellow" onclick="location.href='/Cats/Add';return false;">Add Cat</button>
+</div>

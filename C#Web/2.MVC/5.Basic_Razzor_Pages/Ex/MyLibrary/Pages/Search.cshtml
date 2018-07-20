@@ -1,0 +1,23 @@
+﻿@page
+@model MyLibrary.Web.Pages.SearchModel
+@using MyLibrary.Web.Extensions
+
+@{
+    ViewData["Title"] = "Search";
+}
+
+<div class="h1">Search results for: @Model.SearchQuery</div>
+
+<div>
+    <ul>
+        @foreach (var searchResult in Model.SearchResults)
+        {
+
+            <li>
+                <a asp-page="@searchResult.Path" asp-route-id="@searchResult.Id">
+                    @Html.Raw(searchResult.B_Title_A_Name.SurroundWithTag(Model.SearchQuery, "strong", new { @class = "text-danger" }))
+                </a>(@searchResult.ResultType)
+            </li>
+        }
+    </ul>
+</div>

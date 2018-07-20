@@ -1,0 +1,23 @@
+﻿@page "{id}"
+@model MyLibrary.Web.Pages.Books.DetailsModel
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="row">
+    <div class="col-3">
+        <img src="@Model.ImageUrl" alt="@Model.Title Image" />
+    </div>
+    <div class="col-9">
+        <div class="h2">@Model.Title</div>
+        <h5>
+            by <a asp-page="/Authors/Details" asp-route-id="@Model.AuthorId">
+                @Model.Author
+            </a>
+        </h5>
+        <p>
+            @Model.Description
+        </p>
+    </div>
+</div>
+

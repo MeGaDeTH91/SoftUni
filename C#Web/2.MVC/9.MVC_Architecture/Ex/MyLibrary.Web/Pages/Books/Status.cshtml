@@ -1,0 +1,16 @@
+﻿@page
+@model MyLibrary.Web.Pages.Books.StatusModel
+@{
+    ViewData["Title"] = "Status";
+}
+
+<h2>@Model.BookName (book) - Borrow History</h2>
+
+<div>
+    <ul>
+        @foreach (var book in Model.BookHistory)
+        {
+            <li>Borrow date: @book.StartDate - Return date: @(string.IsNullOrWhiteSpace(book.EndDate)?"none":book.EndDate)</li>
+        }
+    </ul>
+</div>

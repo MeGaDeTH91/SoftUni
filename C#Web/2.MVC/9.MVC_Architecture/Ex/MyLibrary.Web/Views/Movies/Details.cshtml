@@ -1,0 +1,46 @@
+﻿@model MovieDetailsViewModel
+@{
+    ViewData["Title"] = "Details";
+}
+
+<br />
+<div class="row form-control" >
+    <div>
+        <img src="@Model.PosterImageURL" alt="@Model.Title Image" />
+    </div>
+    <div>
+        <div class="h2">@Model.Title (movie)</div>
+        <div class="h5">
+            by <a asp-controller="Directors" asp-action="Details" asp-route-id="@Model.DirectorId">
+                @Model.Director
+            </a>
+        </div>
+        <div>
+            <text>
+                @Model.Description
+            </text>
+        </div>
+        <div>
+            @if (!Model.IsBorrowed)
+            {
+                <h5>Status: <span class="text-success">@Model.Status</span></h5>
+            }
+            else
+            {
+                <h5>Status: <span class="text-danger">@Model.Status</span></h5>
+            }
+        </div>
+        <div>
+            @if (!Model.IsBorrowed)
+            {
+                <a class="btn btn-success" asp-controller="Movies" asp-action="Borrow" asp-route-id="@Model.MovieId">Borrow Movie</a>
+            }
+            else
+            {
+                <a class="btn btn-success" asp-controller="Movies" asp-action="Return" asp-route-id="@Model.MovieId">Return Movie</a>
+            }
+        </div>
+        <a asp-controller="Movies" asp-action="Status" asp-route-id="@Model.MovieId">Show movie history</a>
+    </div>
+    
+</div>

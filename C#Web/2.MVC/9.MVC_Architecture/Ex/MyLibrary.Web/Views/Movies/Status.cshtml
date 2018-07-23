@@ -1,0 +1,15 @@
+﻿@model MovieStatusViewModel
+@{
+    ViewData["Title"] = "Status";
+}
+
+<h2>@Model.MovieTitle (movie) - Borrow History</h2>
+
+<div>
+    <ul>
+        @foreach (var movie in Model.DateHistory)
+        {
+            <li>Borrow date: @movie.StartDate - Return date: @(string.IsNullOrWhiteSpace(movie.EndDate) ? "none" : movie.EndDate), Borrowerd By: @movie.BorrowerName</li>
+        }
+    </ul>
+</div>

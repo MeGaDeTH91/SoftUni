@@ -1,0 +1,13 @@
+﻿@model ProductTypeViewModel
+@{
+    ViewData["Title"] = "Product Types";
+}
+
+<h2>Type <i class="bg-danger">@Model.TypeName</i> - Products</h2>
+
+<ul>
+    @foreach (var product in Model.Products)
+    {
+        <li><a asp-page="/Products/ProductDetails" asp-route-id="@product.Id">@product.ProductName</a></li>
+    }
+</ul>

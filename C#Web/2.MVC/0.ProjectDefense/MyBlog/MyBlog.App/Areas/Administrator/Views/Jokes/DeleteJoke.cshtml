@@ -1,0 +1,29 @@
+﻿@model JokeDetailsViewModel
+@{
+    ViewData["Title"] = "Delete Joke";
+}
+
+<h2>Delete Joke - @Model.Title</h2>
+
+<div class="container row">
+    <div class="col-12">
+        <br />
+        <form method="post">
+            <div class="form-group row">
+                <label class="form-control-label">Joke Title</label>
+                <input class="form-control" name="Title" placeholder="Enter Meme Title" disabled value="@Model.Title" />
+            </div>
+            <div class="form-group row">
+                <label class="form-control-label">Joke Content</label>
+                <textarea class="form-control" name="Content" placeholder="Joke Content" minlength="15" disabled>@Model.Content</textarea>
+            </div>
+            <div class="form-group row">
+                <label class="form-control-label">Photo URL</label>
+                <input type="url" class="form-control" name="PhotoURL" placeholder="Enter URL to Image" disabled value="@Model.PhotoURL" />
+            </div>
+
+            <input type="submit" value="Delete" class="btn btn-danger" />
+            <a asp-area="Administrator" asp-controller="Jokes" asp-action="Index" class="btn btn-default">Cancel</a>
+        </form>
+    </div>
+</div>

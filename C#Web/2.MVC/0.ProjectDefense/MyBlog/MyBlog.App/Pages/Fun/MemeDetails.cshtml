@@ -1,0 +1,22 @@
+﻿@page
+@model MemeDetailsModel
+@{
+    ViewData["Title"] = "Meme Details";
+}
+
+<div class="row">
+    <div class="col-3">
+        <img class="img-thumbnail" src="@Model.MemeDetailsViewModel.PhotoURL" alt="@Model.MemeDetailsViewModel.PhotoURL Image" />
+    </div>
+    <div class="col-9">
+        <div class="h2">@Model.MemeDetailsViewModel.Title</div>
+    </div>
+    <div class="h3">Number of likes: @Model.Likes</div>
+    <br />
+    <a asp-area="" asp-controller="Memes" asp-action="Index" class="btn btn-success">Back to All Memes</a>
+
+    <a asp-area="" asp-controller="Memes" asp-action="AddToFavourites" asp-route-id="@Model.MemeId"
+       class="btn btn-info">
+        Add To Favourites
+    </a>
+</div>

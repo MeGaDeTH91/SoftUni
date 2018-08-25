@@ -1,0 +1,13 @@
+﻿@model SongGenreViewModel
+@{
+    ViewData["Title"] = "Song Genre";
+}
+
+<h2>Type <i class="bg-danger">@Model.GenreName</i> - Songs</h2>
+
+<ul>
+    @foreach (var song in Model.Songs)
+    {
+        <li><a asp-page="/Music/SongDetails" asp-route-id="@song.Id">@song.SongName</a></li>
+    }
+</ul>

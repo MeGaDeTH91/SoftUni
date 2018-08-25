@@ -1,0 +1,12 @@
+﻿@model GameDetailsViewModel
+@{
+    ViewData["Title"] = "Edit Game";
+}
+
+<h2>Edit Game - @Model.GameName</h2>
+
+@Html.EditorForModel()
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

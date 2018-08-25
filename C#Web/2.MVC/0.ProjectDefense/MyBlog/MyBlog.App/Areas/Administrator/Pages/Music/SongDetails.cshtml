@@ -1,0 +1,50 @@
+﻿@page
+@model SongDetailsModel
+@{
+    ViewData["Title"] = "Song Details";
+}
+
+<div class="row">
+    <div class="col-3">
+        <img class="img-thumbnail" src="@Model.SongDetailsViewModel.PhotoURL" alt="@Model.SongDetailsViewModel.PhotoURL Image" />
+    </div>
+    <div class="col-9">
+
+        <div class="h2">@Model.SongDetailsViewModel.SongName</div>
+        <h5>
+            Performed By <a asp-area="Administrator" asp-page="/Music/ArtistDetails" asp-route-id="@Model.SongDetailsViewModel.ArtistId">
+                @Model.SongDetailsViewModel.Artist.FullName
+            </a>
+        </h5>
+        <h5>
+            Song genre: <a asp-area="Administrator" asp-controller="Songs" asp-action="SongGenreDetails" asp-route-id="@Model.SongDetailsViewModel.SongGenreId">
+                @Model.SongDetailsViewModel.SongGenre.GenreName
+            </a>
+        </h5>
+        <text>
+            @Model.SongDetailsViewModel.Description
+        </text>
+        <br />
+        <div>
+            <a href="@Model.SongDetailsViewModel.AdditionalInfoURL">Click here for Additional information</a>
+        </div>
+        <br />
+        <div>
+            <iframe width="560" height="315"
+                    src="@Model.SongDetailsViewModel.HighLightVideoURL"
+                    frameborder="0" allow="autoplay; encrypted-media"
+                    allowfullscreen></iframe>
+        </div>
+    </div>
+    <br />
+    <a asp-area="Administrator" asp-controller="Songs" asp-action="Index" class="btn btn-primary">Back to All Songs</a>
+
+    <a asp-area="Administrator" asp-controller="Songs" asp-action="EditSong" asp-route-id="@Model.SongId"
+       class="btn btn-warning">
+        Edit
+    </a>
+    <a asp-area="Administrator" asp-controller="Songs" asp-action="DeleteSong" asp-route-id="@Model.SongId"
+       class="btn btn-danger">
+        Delete
+    </a>
+</div>

@@ -1,0 +1,25 @@
+﻿@model AddBookAuthorBindingModel
+@{
+    ViewData["Title"] = "AddBookAuthor";
+}
+
+<h2>Create Author</h2>
+<br />
+<form asp-area="Administrator" asp-controller="Books" asp-action="AddBookAuthor" method="post">
+    @Html.FormGroupFor(model => model.FullName)
+    @Html.FormGroupFor(model => model.Description)
+    @Html.FormGroupFor(model => model.PhotoURL)
+    @Html.FormGroupFor(model => model.HighLightVideoURL)
+    @Html.FormGroupFor(model => model.AdditionalInfoURL)
+    @Html.FormGroupFor(model => model.BookAuthorGenreStr)
+
+    <div class="form-group">
+        <div class="col-sm-push-2">
+            <input type="submit" value="Create" class="btn btn-success" />
+            <a asp-area="Administrator" asp-controller="Books" asp-action="Index" class="btn btn-default">Cancel</a>
+        </div>
+    </div>
+</form>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

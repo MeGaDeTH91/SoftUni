@@ -1,0 +1,28 @@
+﻿@model IEnumerable<ReviewConciseViewModel>
+    @{
+        ViewData["Title"] = "Reviews list";
+    }
+
+
+    <br />
+    <div class="form-group">
+        <div class="col-sm-push-2">
+            <a asp-area="Administrator" asp-controller="Reviews" asp-action="AddReview" class="btn btn-success">Add new Review</a>
+            <a asp-area="Administrator" asp-controller="Reviews" asp-action="AddReviewType" class="btn btn-success">Add new Review Type</a>
+        </div>
+    </div>
+    <h2>Reviews:</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>#Id</th>
+                <th>Review Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @Html.DisplayForModel()
+        </tbody>
+    </table>
+
+

@@ -1,0 +1,41 @@
+﻿@page
+@model BrandDetailsModel
+@{
+    ViewData["Title"] = "Brand Details";
+}
+
+<div class="row">
+    <div class="col-3">
+        <img class="img-thumbnail" src="@Model.BrandDetailsViewModel.BrandImageURL" alt="@Model.BrandDetailsViewModel.BrandImageURL Image" />
+    </div>
+    <div class="col-9">
+
+        <div class="h2">@Model.BrandDetailsViewModel.BrandName</div>
+        <h5>
+            Category: <a asp-area="Administrator" asp-controller="Brands" asp-action="BrandTypeDetails" asp-route-id="@Model.BrandDetailsViewModel.BrandTypeId">
+                @Model.BrandDetailsViewModel.BrandType.TypeName
+            </a>
+        </h5>
+        <text>
+            @Model.BrandDetailsViewModel.BrandDescription
+        </text>
+        <br />
+        <div>
+            <a href="@Model.BrandDetailsViewModel.AdditionalInfoURL">Click here for Additional information</a>
+        </div>
+    </div>
+    <br />
+    <a asp-area="Administrator" asp-controller="Brands" asp-action="Index" class="btn btn-primary">Back to All Brands</a>
+    <a asp-area="Administrator" asp-controller="Games" asp-action="Index" class="btn btn-primary">All Games</a>
+    <a asp-area="Administrator" asp-controller="Instruments" asp-action="Index" class="btn btn-primary">All Instruments</a>
+    <a asp-area="Administrator" asp-controller="Products" asp-action="Index" class="btn btn-primary">All Products</a>
+
+    <a asp-area="Administrator" asp-controller="Brands" asp-action="EditBrand" asp-route-id="@Model.BrandId"
+       class="btn btn-warning">
+        Edit
+    </a>
+    <a asp-area="Administrator" asp-controller="Brands" asp-action="DeleteBrand" asp-route-id="@Model.BrandId"
+       class="btn btn-danger">
+        Delete
+    </a>
+</div>

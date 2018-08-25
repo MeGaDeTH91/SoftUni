@@ -1,0 +1,30 @@
+﻿@model BookDetailsViewModel
+
+<div class="container row">
+    <div class="col-12">
+        <br />
+        <form method="post">
+            <div class="form-group row">
+                <label class="form-control-label">Title</label>
+                <input class="form-control" name="Title" placeholder="Enter Book Title" value="@Model.Title" disabled />
+            </div>
+
+            <div class="form-group row">
+                <label class="form-control-label">Description</label>
+                <textarea class="form-control" name="Description" placeholder="Book Description" minlength="20">@Model.Description</textarea>
+            </div>
+
+            <div class="form-group row">
+                <label class="form-control-label">Photo URL</label>
+                <input type="url" class="form-control" name="PhotoURL" placeholder="Enter URL to Image" value="@Model.PhotoURL" />
+            </div>
+            <div class="form-group row">
+                <label class="form-control-label">Additional Info URL</label>
+                <input type="url" class="form-control" name="AdditionalInfoURL" placeholder="Enter URL for Additional Information" value="@Model.AdditionalInfoURL" />
+            </div>
+
+            <input type="submit" value="Edit" class="btn btn-warning" />
+            <a asp-area="Administrator" asp-controller="Books" asp-action="Index" class="btn btn-default">Cancel</a>
+        </form>
+    </div>
+</div>

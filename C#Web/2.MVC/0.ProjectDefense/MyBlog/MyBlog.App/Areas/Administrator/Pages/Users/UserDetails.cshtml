@@ -1,0 +1,52 @@
+﻿@page
+@model UserDetailsModel
+@{
+    ViewData["Title"] = "User Details";
+}
+
+<div class="row">
+    <div class="col-9">
+
+        <div class="h2"><b>Username:</b> @Model.UserDetailsViewModel.Username</div>
+        <div class="h3"><b>Full Name:</b> @Model.UserDetailsViewModel.FullName</div>
+        <div class="h3"><b>Email:</b> @Model.UserDetailsViewModel.Email</div>
+        <div class="h3"><b>Is Email Confirmed:</b>  @Html.DisplayFor(x => x.UserDetailsViewModel.EmailConfirmed)</div>
+        <div class="h3"><b>Is User Banned:</b> @Html.DisplayFor(x => x.UserDetailsViewModel.IsBanned)</div>
+        <div class="h3">
+            <b>User Roles:</b>@foreach (var role in Model.UserDetailsViewModel.UserRoles)
+            {
+                <div>@role</div>
+            }
+        </div>
+
+    </div>
+    <br />
+    @if (!Model.UserDetailsViewModel.UserRoles.Any(x => x == CommonConstants.PremiumUserSuffix))
+    {
+        <a asp-area="Administrator" asp-controller="Users" asp-action="MakePremium" asp-route-id="@Model.UserId"
+           class="btn btn-success">
+            Give premium status
+        </a>
+    }
+    else
+    {
+        <a asp-area="Administrator" asp-controller="Users" asp-action="RemovePremium" asp-route-id="@Model.UserId"
+           class="btn btn-warning">
+            Remove premium status
+        </a>
+    }
+    @if (!Model.UserDetailsViewModel.IsBanned)
+    {
+        <a asp-area="Administrator" asp-controller="Users" asp-action="Ban" asp-route-id="@Model.UserId"
+           class="btn btn-danger">
+            Ban
+        </a>
+    }
+    else
+    {
+        <a asp-area="Administrator" asp-controller="Users" asp-action="Unban" asp-route-id="@Model.UserId"
+           class="btn btn-danger">
+            Remove ban
+        </a>
+    }
+</div>

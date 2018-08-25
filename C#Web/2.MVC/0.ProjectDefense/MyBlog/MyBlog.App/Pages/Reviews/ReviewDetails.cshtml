@@ -1,0 +1,42 @@
+﻿@page
+@model ReviewDetailsModel
+@{
+    ViewData["Title"] = "Review Details";
+}
+
+<div class="row">
+    <div class="col-3">
+        <img class="img-thumbnail" src="@Model.ReviewDetailsViewModel.PhotoURL" alt="@Model.ReviewDetailsViewModel.PhotoURL Image" />
+    </div>
+    <div class="col-9">
+
+        <div class="h2">@Model.ReviewDetailsViewModel.Title</div>
+        <h5>
+            Review type: <a asp-area="Administrator" asp-controller="Reviews" asp-action="ReviewTypeDetails" asp-route-id="@Model.ReviewDetailsViewModel.ReviewTypeId">
+                @Model.ReviewDetailsViewModel.ReviewType.ReviewTypeName
+            </a>
+        </h5>
+        <text>
+            @Model.ReviewDetailsViewModel.Content
+        </text>
+        <br />
+        <div>
+            <a href="@Model.ReviewDetailsViewModel.AdditionalInfoURL">Click here for Additional information</a>
+        </div>
+        <br />
+        <div>
+            <iframe width="560" height="315"
+                    src="@Model.ReviewDetailsViewModel.HighLightVideoURL"
+                    frameborder="0" allow="autoplay; encrypted-media"
+                    allowfullscreen></iframe>
+        </div>
+        <div class="h3">Number of likes: @Model.Likes</div>
+    </div>
+    <br />
+    <a asp-area="" asp-controller="Reviews" asp-action="Index" class="btn btn-success">Back to All Reviews</a>
+
+    <a asp-area="" asp-controller="Reviews" asp-action="AddToFavourites" asp-route-id="@Model.ReviewId"
+       class="btn btn-info">
+        Add To Favourites
+    </a>
+</div>

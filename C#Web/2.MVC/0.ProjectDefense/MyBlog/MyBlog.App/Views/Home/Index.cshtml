@@ -1,0 +1,61 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container container-fluid">
+    <h2>Hello, User!</h2>
+    <div>
+        <a asp-area="" asp-controller="Articles" asp-action="Index" class="btn btn-primary btn-lg btn-block">Read Cool Articles</a>
+    </div>
+    <br />
+    <div>
+        <a asp-area="" asp-controller="Books" asp-action="Index" class="btn btn-primary btn-lg btn-block">Check Cool Books</a>
+    </div>
+    <br />
+    <div>
+        <a asp-area="" asp-controller="Brands" asp-action="Index" class="btn btn-primary btn-lg btn-block">Check Cool Brands</a>
+    </div>
+    <br />
+    <div>
+        <a asp-area="" asp-controller="Memes" asp-action="Index" class="btn btn-primary btn-lg btn-block">Check Cool Memes</a>
+    </div>
+    <br />
+    <div>
+        <a asp-area="" asp-controller="Jokes" asp-action="Index" class="btn btn-primary btn-lg btn-block">Check Cool Jokes</a>
+    </div>
+    <br />
+    <div>
+        <a asp-area="" asp-controller="Games" asp-action="Index" class="btn btn-primary btn-lg btn-block">Check Cool Games</a>
+    </div>
+    <br />
+    <div>
+        <a asp-area="" asp-controller="Artists" asp-action="Index" class="btn btn-primary btn-lg btn-block">Check Cool Artists</a>
+    </div>
+    <br />
+    <div>
+        <a asp-area="" asp-controller="Instruments" asp-action="Index" class="btn btn-primary btn-lg btn-block">Check Cool Instruments</a>
+    </div>
+    <br />
+    <div>
+        <a asp-area="" asp-controller="Songs" asp-action="Index" class="btn btn-primary btn-lg btn-block">View Cool Songs</a>
+    </div>
+    <br />
+    <div>
+        <a asp-area="" asp-controller="Products" asp-action="Index" class="btn btn-primary btn-lg btn-block">Buy Cool Products</a>
+    </div>
+    <br />
+    <div>
+        <a asp-area="" asp-controller="Reviews" asp-action="Index" class="btn btn-primary btn-lg btn-block">Check Cool Reviews</a>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $.ajax({
+            url: "https://localhost:44332/home/index",
+            method: "GET",
+            success: data => console.log("success", data),
+            error: err => console.log("error", err)
+        });
+    </script>
+}

@@ -1,0 +1,21 @@
+﻿@model AddArtistTypeBindingModel
+@{
+    ViewData["Title"] = "Add Artist Type";
+}
+
+<h2>Add Type For Artists</h2>
+<br />
+
+<form asp-area="Administrator" asp-controller="Artists" asp-action="AddArtistType" method="post">
+    @Html.FormGroupFor(model => model.ArtistTypeName)
+
+    <div class="form-group">
+        <div class="col-sm-push-2">
+            <input type="submit" value="Create" class="btn btn-success" />
+            <a asp-area="Administrator" asp-controller="Artists" asp-action="Index" class="btn btn-default">Cancel</a>
+        </div>
+    </div>
+</form>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

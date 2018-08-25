@@ -1,0 +1,16 @@
+﻿@model ProductConciseViewModel
+
+<tr>
+    <td>@Model.Id</td>
+    <td><a asp-area="Premium" asp-controller="Home" asp-action="ProductDetails" asp-route-id="@Model.Id">@Model.ProductName</a></td>
+    <td>
+        <a asp-area="Premium" asp-controller="Home" asp-action="ProductDetails" asp-route-id="@Model.Id"
+           class="btn btn-default">
+            Details
+        </a>
+        <a asp-area="Premium" asp-controller="Home" asp-action="Buy" asp-route-id="@Model.Id"
+           class="btn btn-warning">
+            Buy
+        </a>
+    </td>
+</tr>

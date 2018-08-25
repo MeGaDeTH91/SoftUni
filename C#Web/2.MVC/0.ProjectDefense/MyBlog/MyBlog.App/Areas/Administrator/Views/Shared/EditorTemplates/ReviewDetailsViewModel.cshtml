@@ -1,0 +1,35 @@
+﻿@model ReviewDetailsViewModel
+@{
+    ViewData["Title"] = "Edit Review";
+}
+
+<div class="container row">
+    <div class="col-12">
+        <br />
+        <form method="post">
+            <div class="form-group row">
+                <label class="form-control-label">Review Title</label>
+                <input class="form-control" name="Title" placeholder="Enter Review Name" value="@Model.Title" disabled/>
+            </div>
+            <div class="form-group row">
+                <label class="form-control-label">Review Content</label>
+                <textarea class="form-control" name="Content" placeholder="Review Content" minlength="15">@Model.Content</textarea>
+            </div>
+            <div class="form-group row">
+                <label class="form-control-label">Video URL</label>
+                <input type="url" class="form-control" name="HighLightVideoURL" placeholder="Enter URL to Video" value="@Model.HighLightVideoURL" />
+            </div>
+            <div class="form-group row">
+                <label class="form-control-label">Review Image URL</label>
+                <input type="url" class="form-control" name="PhotoURL" placeholder="Enter URL to Image" value="@Model.PhotoURL" />
+            </div>
+            <div class="form-group row">
+                <label class="form-control-label">Additional Info URL</label>
+                <input type="url" class="form-control" name="AdditionalInfoURL" placeholder="Enter URL for Additional Info" value="@Model.AdditionalInfoURL" />
+            </div>
+
+            <input type="submit" value="Edit" class="btn btn-warning" />
+            <a asp-area="Administrator" asp-controller="Reviews" asp-action="Index" class="btn btn-default">Cancel</a>
+        </form>
+    </div>
+</div>

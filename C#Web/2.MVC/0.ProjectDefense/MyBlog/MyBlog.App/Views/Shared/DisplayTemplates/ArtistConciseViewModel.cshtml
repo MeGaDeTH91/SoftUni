@@ -1,0 +1,10 @@
+﻿@model ArtistConciseViewModel
+
+<tr>
+    <td>@Model.Id</td>
+    <td><a asp-page="/Music/ArtistDetails" asp-route-id="@Model.Id">@Model.FullName</a></td>
+    <td>
+        <a asp-area="" asp-page="/Music/ArtistDetails" asp-route-id="@Model.Id"
+           class="btn btn-default">Details</a>
+    </td>
+</tr>

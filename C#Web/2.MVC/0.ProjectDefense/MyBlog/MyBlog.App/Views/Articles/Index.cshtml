@@ -1,0 +1,21 @@
+﻿@model IEnumerable<ArticleConciseViewModel>
+@{
+    ViewData["Title"] = "Articles list";
+}
+
+
+<h2>Articles:</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>#Id</th>
+            <th>Title</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @Html.DisplayForModel()
+    </tbody>
+</table>
+
+

@@ -1,0 +1,21 @@
+﻿@model AddMemeBindingModel
+@{
+    ViewData[CommonConstants.TitleSuffix] = "Add Meme";
+}
+
+<h2>Create Meme</h2>
+<br />
+<form asp-area="Administrator" asp-controller="Memes" asp-action="AddMeme" method="post">
+    @Html.FormGroupFor(model => model.Title)
+    @Html.FormGroupFor(model => model.PhotoURL)
+
+    <div class="form-group">
+        <div class="col-sm-push-2">
+            <input type="submit" value="Create" class="btn btn-success" />
+            <a asp-area="Administrator" asp-controller="Memes" asp-action="Index" class="btn btn-default">Cancel</a>
+        </div>
+    </div>
+</form>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

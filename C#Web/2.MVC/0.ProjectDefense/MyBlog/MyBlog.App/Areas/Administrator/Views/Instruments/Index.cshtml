@@ -1,0 +1,28 @@
+﻿@model IEnumerable<InstrumentConciseViewModel>
+    @{
+        ViewData["Title"] = "Instruments list";
+    }
+
+
+    <br />
+    <div class="form-group">
+        <div class="col-sm-push-2">
+            <a asp-area="Administrator" asp-controller="Instruments" asp-action="AddInstrument" class="btn btn-success">Add new Instrument</a>
+            <a asp-area="Administrator" asp-controller="Instruments" asp-action="AddInstrumentType" class="btn btn-success">Add new Instrument Type</a>
+        </div>
+    </div>
+    <h2>Instruments:</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>#Id</th>
+                <th>Instrument Model Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @Html.DisplayForModel()
+        </tbody>
+    </table>
+
+

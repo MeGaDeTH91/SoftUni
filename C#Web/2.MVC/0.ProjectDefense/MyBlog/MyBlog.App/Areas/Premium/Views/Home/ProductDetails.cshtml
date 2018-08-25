@@ -1,0 +1,39 @@
+﻿@model PremiumOfferDetailsViewModel
+
+@{
+    ViewData["Title"] = "Premium Offer Details";
+}
+
+<div class="row">
+    <div class="col-3">
+        <img class="img-thumbnail" src="@Model.PhotoURL" alt="@Model.PhotoURL Image" />
+    </div>
+    <div class="col-9">
+
+        <div class="h2">@Model.ProductName</div>
+        <div class="h3">$@(Model.Price.ToString("F2"))</div>
+        <div class="h5">
+            Made By: @Model.Brand.BrandName
+        </div>
+        <div class="h5">
+            Product category: @Model.ProductType.TypeName
+        </div>
+        <text>
+            @Model.Description
+        </text>
+        <br />
+        <div>
+            <a href="@Model.AdditionalInfoURL">Click here for Additional information</a>
+        </div>
+        <br />
+        <div>
+            <iframe width="560" height="315"
+                    src="@Model.HighLightVideoURL"
+                    frameborder="0" allow="autoplay; encrypted-media"
+                    allowfullscreen></iframe>
+        </div>
+    </div>
+    <br />
+    <a asp-area="Premium" asp-controller="Home" asp-action="PremiumIndex" class="btn btn-primary">Back to all Products</a>
+    <a asp-area="Premium" asp-controller="Home" asp-action="Buy" asp-route-id="@Model.Id" class="btn btn-warning">Buy Premium Product</a>
+</div>

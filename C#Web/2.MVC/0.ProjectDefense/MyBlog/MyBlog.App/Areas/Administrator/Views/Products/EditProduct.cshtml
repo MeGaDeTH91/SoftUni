@@ -1,0 +1,12 @@
+﻿@model ProductDetailsViewModel
+@{
+    ViewData["Title"] = "Edit Product";
+}
+
+<h2>Edit Product - @Model.ProductName</h2>
+
+@Html.EditorForModel()
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,40 @@
+﻿@page
+@model DetailsModel
+@{
+    ViewData["Title"] = "Article Details";
+}
+
+<div class="row">
+    <div class="col-3">
+        <img class="img-thumbnail" src="@Model.ArticleDetailsViewModel.PhotoURL" alt="@Model.ArticleDetailsViewModel.PhotoURL Image" />
+    </div>
+    <div class="col-9">
+
+        <div class="h2">@Model.ArticleDetailsViewModel.Title</div>
+        <h5>
+            Category: <a asp-area="Administrator" asp-controller="Articles" asp-action="CategoryArticles" asp-route-id="@Model.ArticleDetailsViewModel.ArticleCategoryId">
+                @Model.ArticleDetailsViewModel.ArticleCategory.CategoryName
+            </a>
+        </h5>
+        <text>
+            @Model.ArticleDetailsViewModel.Content
+        </text>
+        <br />
+        <br />
+        <div>
+            <iframe width="560" height="315"
+                    src="@Model.ArticleDetailsViewModel.HighLightVideoURL"
+                    frameborder="0" allow="autoplay; encrypted-media"
+                    allowfullscreen></iframe>
+        </div>
+        <div class="h3">Number of likes: @Model.Likes</div>
+    </div>
+
+    <br />
+    <a asp-area="" asp-controller="Articles" asp-action="Index" class="btn btn-success">Back to All Articles</a>
+
+    <a asp-area="" asp-controller="Articles" asp-action="AddToFavourites" asp-route-id="@Model.ArticleId"
+       class="btn btn-info">
+        Add To Favourites
+    </a>
+</div>

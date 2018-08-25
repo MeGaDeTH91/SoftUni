@@ -1,0 +1,41 @@
+﻿@model ProductDetailsViewModel
+@{
+    ViewData["Title"] = "Delete Product";
+}
+
+<h2>Delete Product - @Model.ProductName</h2>
+
+<div class="container row">
+    <div class="col-12">
+        <br />
+        <form method="post">
+            <div class="form-group row">
+                <label class="form-control-label">Product Name</label>
+                <input class="form-control" name="ProductName" placeholder="Enter Product Name" value="@Model.ProductName" disabled />
+            </div>
+            <div class="form-group row">
+                <label class="form-control-label">Product Type Name</label>
+                <input type="url" class="form-control" name="TypeName" placeholder="Product Type Name" value="@Model.ProductType.TypeName" disabled />
+            </div>
+            <div class="form-group row">
+                <label class="form-control-label">Product Description</label>
+                <textarea class="form-control" name="Description" placeholder="Product Description" minlength="15" disabled>@Model.Description</textarea>
+            </div>
+            <div class="form-group row">
+                <label class="form-control-label">Video URL</label>
+                <input type="url" class="form-control" name="HighLightVideoURL" placeholder="Enter URL to Video" value="@Model.HighLightVideoURL" disabled />
+            </div>
+            <div class="form-group row">
+                <label class="form-control-label">Product Image URL</label>
+                <input type="url" class="form-control" name="PhotoURL" placeholder="Enter URL to Image" value="@Model.PhotoURL" disabled />
+            </div>
+            <div class="form-group row">
+                <label class="form-control-label">Additional Info URL</label>
+                <input type="url" class="form-control" name="AdditionalInfoURL" placeholder="Enter URL for Additional Info" value="@Model.AdditionalInfoURL" disabled />
+            </div>
+
+            <input type="submit" value="Delete" class="btn btn-danger" />
+            <a asp-area="Administrator" asp-controller="Products" asp-action="Index" class="btn btn-default">Cancel</a>
+        </form>
+    </div>
+</div>

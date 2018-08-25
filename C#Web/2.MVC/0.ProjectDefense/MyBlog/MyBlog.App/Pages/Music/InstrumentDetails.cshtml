@@ -1,0 +1,47 @@
+﻿@page
+@model InstrumentDetailsModel
+@{
+    ViewData["Title"] = "Instrument Details";
+}
+
+<div class="row">
+    <div class="col-3">
+        <img class="img-thumbnail" src="@Model.InstrumentDetailsViewModel.PhotoURL" alt="@Model.InstrumentDetailsViewModel.PhotoURL Image" />
+    </div>
+    <div class="col-9">
+
+        <div class="h2">@Model.InstrumentDetailsViewModel.ModelName</div>
+        <h5>
+            Made By: <a asp-area="Administrator" asp-page="/Brands/BrandDetails" asp-route-id="@Model.InstrumentDetailsViewModel.BrandId">
+                @Model.InstrumentDetailsViewModel.Brand.BrandName
+            </a>
+        </h5>
+        <h5>
+            Instrument type: <a asp-area="Administrator" asp-controller="Instruments" asp-action="InstrumentTypeDetails" asp-route-id="@Model.InstrumentDetailsViewModel.InstrumentTypeId">
+                @Model.InstrumentDetailsViewModel.InstrumentType.TypeName
+            </a>
+        </h5>
+        <text>
+            @Model.InstrumentDetailsViewModel.Description
+        </text>
+        <br />
+        <div>
+            <a href="@Model.InstrumentDetailsViewModel.AdditionalInfoURL">Click here for Additional information</a>
+        </div>
+        <br />
+        <div>
+            <iframe width="560" height="315"
+                    src="@Model.InstrumentDetailsViewModel.HighLightVideoURL"
+                    frameborder="0" allow="autoplay; encrypted-media"
+                    allowfullscreen></iframe>
+        </div>
+        <div class="h3">Number of likes: @Model.Likes</div>
+    </div>
+    <br />
+    <a asp-area="" asp-controller="Instruments" asp-action="Index" class="btn btn-success">Back to All Instruments</a>
+
+    <a asp-area="" asp-controller="Instruments" asp-action="AddToFavourites" asp-route-id="@Model.InstrumentId"
+       class="btn btn-info">
+        Add To Favourites
+    </a>
+</div>

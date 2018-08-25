@@ -1,0 +1,12 @@
+﻿@model InstrumentDetailsViewModel
+@{
+    ViewData["Title"] = "Edit Instrument";
+}
+
+<h2>Edit Instrument - @Model.ModelName</h2>
+
+@Html.EditorForModel()
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,47 @@
+﻿@page
+@model ProductDetailsModel
+@{
+    ViewData["Title"] = "Product Details";
+}
+
+<div class="row">
+    <div class="col-3">
+        <img class="img-thumbnail" src="@Model.ProductDetailsViewModel.PhotoURL" alt="@Model.ProductDetailsViewModel.PhotoURL Image" />
+    </div>
+    <div class="col-9">
+
+        <div class="h2">@Model.ProductDetailsViewModel.ProductName</div>
+        <h5>
+            Made By: <a asp-area="Administrator" asp-page="/Brands/BrandDetails" asp-route-id="@Model.ProductDetailsViewModel.BrandId">
+                @Model.ProductDetailsViewModel.Brand.BrandName
+            </a>
+        </h5>
+        <h5>
+            Game category: <a asp-area="Administrator" asp-controller="Products" asp-action="ProductTypeDetails" asp-route-id="@Model.ProductDetailsViewModel.ProductTypeId">
+                @Model.ProductDetailsViewModel.ProductType.TypeName
+            </a>
+        </h5>
+        <text>
+            @Model.ProductDetailsViewModel.Description
+        </text>
+        <br />
+        <div>
+            <a href="@Model.ProductDetailsViewModel.AdditionalInfoURL">Click here for Additional information</a>
+        </div>
+        <br />
+        <div>
+            <iframe width="560" height="315"
+                    src="@Model.ProductDetailsViewModel.HighLightVideoURL"
+                    frameborder="0" allow="autoplay; encrypted-media"
+                    allowfullscreen></iframe>
+        </div>
+        <div class="h3">Number of purchases: @Model.Purchases</div>
+    </div>
+    <br />
+    <a asp-area="" asp-controller="Products" asp-action="Index" class="btn btn-success">Back to All Products</a>
+
+    <a asp-area="" asp-controller="Products" asp-action="BuyProduct" asp-route-id="@Model.ProductId"
+       class="btn btn-info">
+        Buy Product
+    </a>
+</div>

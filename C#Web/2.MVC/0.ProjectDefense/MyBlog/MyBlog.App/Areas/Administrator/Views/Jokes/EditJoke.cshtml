@@ -1,0 +1,12 @@
+﻿@model JokeDetailsViewModel
+@{
+    ViewData["Title"] = "Edit Joke";
+}
+
+<h2>Edit Joke - @Model.Title</h2>
+
+@Html.EditorForModel()
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

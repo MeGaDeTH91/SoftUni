@@ -1,0 +1,13 @@
+﻿@model ArtistTypeViewModel
+@{
+    ViewData["Title"] = "Artist Type";
+}
+
+<h2>Type <i class="bg-danger">@Model.ArtistTypeName</i> - Artists</h2>
+
+<ul>
+    @foreach (var artist in Model.Artists)
+    {
+        <li><a asp-page="/Music/ArtistDetails" asp-route-id="@artist.Id">@artist.FullName</a></li>
+    }
+</ul>

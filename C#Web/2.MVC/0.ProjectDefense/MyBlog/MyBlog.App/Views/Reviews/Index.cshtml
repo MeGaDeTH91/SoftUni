@@ -1,0 +1,20 @@
+﻿@model IEnumerable<ReviewConciseViewModel>
+    @{
+        ViewData["Title"] = "Reviews list";
+    }
+
+    <h2>Reviews:</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>#Id</th>
+                <th>Review Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @Html.DisplayForModel()
+        </tbody>
+    </table>
+
+

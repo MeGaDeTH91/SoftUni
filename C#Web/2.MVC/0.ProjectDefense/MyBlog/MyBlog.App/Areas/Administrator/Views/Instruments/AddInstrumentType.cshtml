@@ -1,0 +1,21 @@
+﻿@model AddInstrumentTypeBindingModel
+@{
+    ViewData["Title"] = "Add Instrument Type";
+}
+
+<h2>Add Type For Instruments</h2>
+<br />
+
+<form asp-area="Administrator" asp-controller="Instruments" asp-action="AddInstrumentType" method="post">
+    @Html.FormGroupFor(model => model.TypeName)
+
+    <div class="form-group">
+        <div class="col-sm-push-2">
+            <input type="submit" value="Create" class="btn btn-success" />
+            <a asp-area="Administrator" asp-controller="Instruments" asp-action="Index" class="btn btn-default">Cancel</a>
+        </div>
+    </div>
+</form>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,32 @@
+﻿@model UserConciseViewModel
+
+<tr>
+    <td><a asp-page="/Users/UserDetails" asp-route-id="@Model.Id">@Model.Username</a></td>
+    <td>@Model.Email</td>
+    <td>
+        <a asp-area="Administrator" asp-page="/Users/UserDetails" asp-route-id="@Model.Id"
+           class="btn btn-default">Details</a>
+        <a asp-area="Administrator" asp-controller="Users" asp-action="MakePremium" asp-route-id="@Model.Id"
+           class="btn btn-success">
+            Give premium status
+        </a>
+        <a asp-area="Administrator" asp-controller="Users" asp-action="RemovePremium" asp-route-id="@Model.Id"
+           class="btn btn-warning">
+            Remove premium status
+        </a>
+        @if (!Model.IsBanned)
+        {
+            <a asp-area="Administrator" asp-controller="Users" asp-action="Ban" asp-route-id="@Model.Id"
+               class="btn btn-danger">
+                Ban
+            </a>
+        }
+        else
+        {
+            <a asp-area="Administrator" asp-controller="Users" asp-action="Unban" asp-route-id="@Model.Id"
+               class="btn btn-danger">
+                Remove ban
+            </a>
+        }
+    </td>
+</tr>

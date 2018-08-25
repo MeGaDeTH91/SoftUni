@@ -1,0 +1,20 @@
+﻿@model IEnumerable<InstrumentConciseViewModel>
+    @{
+        ViewData["Title"] = "Instruments list";
+    }
+
+    <h2>Instruments:</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>#Id</th>
+                <th>Instrument Model Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @Html.DisplayForModel()
+        </tbody>
+    </table>
+
+

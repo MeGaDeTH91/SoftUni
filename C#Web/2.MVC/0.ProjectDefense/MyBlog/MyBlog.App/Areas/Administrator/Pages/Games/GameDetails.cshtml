@@ -1,0 +1,50 @@
+﻿@page
+@model GameDetailsModel
+@{
+    ViewData["Title"] = "Game Details";
+}
+
+<div class="row">
+    <div class="col-3">
+        <img class="img-thumbnail" src="@Model.GameDetailsViewModel.PhotoURL" alt="@Model.GameDetailsViewModel.PhotoURL Image" />
+    </div>
+    <div class="col-9">
+
+        <div class="h2">@Model.GameDetailsViewModel.GameName</div>
+        <h5>
+           Made By: <a asp-area="Administrator" asp-page="/Brands/BrandDetails" asp-route-id="@Model.GameDetailsViewModel.BrandId">
+                @Model.GameDetailsViewModel.Brand.BrandName
+            </a>
+        </h5>
+        <h5>
+            Game category: <a asp-area="Administrator" asp-controller="Games" asp-action="GameTypeDetails" asp-route-id="@Model.GameDetailsViewModel.GameTypeId">
+                @Model.GameDetailsViewModel.GameType.GameTypeName
+            </a>
+        </h5>
+        <text>
+            @Model.GameDetailsViewModel.Description
+        </text>
+        <br />
+        <div>
+            <a href="@Model.GameDetailsViewModel.AdditionalInfoURL">Click here for Additional information</a>
+        </div>
+        <br />
+        <div>
+            <iframe width="560" height="315"
+                    src="@Model.GameDetailsViewModel.HighLightVideoURL"
+                    frameborder="0" allow="autoplay; encrypted-media"
+                    allowfullscreen></iframe>
+        </div>
+    </div>
+    <br />
+    <a asp-area="Administrator" asp-controller="Games" asp-action="Index" class="btn btn-primary">Back to All Games</a>
+
+    <a asp-area="Administrator" asp-controller="Games" asp-action="EditGame" asp-route-id="@Model.GameId"
+       class="btn btn-warning">
+        Edit
+    </a>
+    <a asp-area="Administrator" asp-controller="Games" asp-action="DeleteGame" asp-route-id="@Model.GameId"
+       class="btn btn-danger">
+        Delete
+    </a>
+</div>

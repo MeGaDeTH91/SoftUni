@@ -1,0 +1,14 @@
+﻿@model BookAuthorViewModel
+@{
+    ViewData["Title"] = "Book Author";
+}
+
+<h2>Author <i class="bg-danger">@Model.FullName</i> - Books</h2>
+
+<ul>
+    @foreach (var book in Model.Books)
+    {
+        <li><a asp-page="/Books/BookDetails" asp-route-id="@book.Id">@book.Title</a></li>
+    }
+</ul>
+

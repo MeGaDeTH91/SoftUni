@@ -1,0 +1,13 @@
+﻿@model BrandTypeViewModel
+@{
+    ViewData["Title"] = "BrandTypes";
+}
+
+<h2>Type <i class="bg-danger">@Model.BrandTypeName</i> - Brands</h2>
+
+<ul>
+    @foreach (var brand in Model.Brands)
+    {
+        <li><a asp-page="/Brands/BrandDetails" asp-route-id="@brand.Id">@brand.BrandName</a></li>
+    }
+</ul>

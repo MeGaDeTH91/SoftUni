@@ -1,0 +1,35 @@
+﻿@model BrandDetailsViewModel
+@{
+    ViewData["Title"] = "Delete Brand";
+}
+
+<h2>Delete Brand - @Model.BrandName</h2>
+
+<div class="container row">
+    <div class="col-12">
+        <br />
+        <form method="post">
+            <div class="form-group row">
+                <label class="form-control-label">BrandName</label>
+                <input class="form-control" name="BrandName" placeholder="Enter Brand Name" value="@Model.BrandName" disabled />
+            </div>
+
+            <div class="form-group row">
+                <label class="form-control-label">BrandDescrtiption</label>
+                <textarea class="form-control" name="BrandDescription" placeholder="Brand Description" minlength="15" disabled>@Model.BrandDescription</textarea>
+            </div>
+
+            <div class="form-group row">
+                <label class="form-control-label">BrandImage URL</label>
+                <input type="url" class="form-control" name="BrandImageURL" placeholder="Enter URL to Image" value="@Model.BrandImageURL" disabled />
+            </div>
+            <div class="form-group row">
+                <label class="form-control-label">Additional Info URL</label>
+                <input type="url" class="form-control" name="AdditionalInfoURL" placeholder="Enter URL for Additional Info" value="@Model.AdditionalInfoURL" disabled />
+            </div>
+
+            <input type="submit" value="Delete" class="btn btn-danger" />
+            <a asp-area="Administrator" asp-controller="Brands" asp-action="Index" class="btn btn-default">Cancel</a>
+        </form>
+    </div>
+</div>

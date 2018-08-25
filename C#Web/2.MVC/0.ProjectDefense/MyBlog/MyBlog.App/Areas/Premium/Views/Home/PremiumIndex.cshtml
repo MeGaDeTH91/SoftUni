@@ -1,0 +1,20 @@
+﻿@model IEnumerable<ProductConciseViewModel>
+@{
+    ViewData["Title"] = "Premium offers";
+}
+
+<h2>Premium offers:</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>#Id</th>
+            <th>Premium Product Name</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @Html.DisplayForModel()
+    </tbody>
+</table>
+
+

@@ -1,0 +1,26 @@
+﻿@model IEnumerable<JokeConciseViewModel>
+@{
+    ViewData["Title"] = "Jokes list";
+}
+
+<br />
+<div class="form-group">
+    <div class="col-sm-push-2">
+        <a asp-area="Administrator" asp-controller="Jokes" asp-action="AddJoke" class="btn btn-success">Add new Joke</a>
+    </div>
+</div>
+<h2>Jokes:</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>#Id</th>
+            <th>Joke Title</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @Html.DisplayForModel()
+    </tbody>
+</table>
+
+

@@ -1,0 +1,35 @@
+﻿@model ArticleDetailsViewModel
+@{
+    ViewData["Title"] = "Delete Article";
+}
+
+<h2>Delete Article - @Model.Title</h2>
+
+<div class="container row">
+    <div class="col-12">
+        <br />
+        <form method="post">
+            <div class="form-group row">
+                <label class="form-control-label">Title</label>
+                <input class="form-control" name="Title" placeholder="Enter Article Title" value="@Model.Title" disabled />
+            </div>
+
+            <div class="form-group row">
+                <label class="form-control-label">Content</label>
+                <textarea class="form-control" name="Content" placeholder="Article Content" minlength="20" disabled>@Model.Content</textarea>
+            </div>
+
+            <div class="form-group row">
+                <label class="form-control-label">Photo URL</label>
+                <input type="url" class="form-control" name="PhotoURL" placeholder="Enter URL to Image" value="@Model.PhotoURL" disabled />
+            </div>
+            <div class="form-group row">
+                <label class="form-control-label">Video URL</label>
+                <input type="url" class="form-control" name="HighLightVideoURL" placeholder="Enter URL to Video" value="@Model.HighLightVideoURL" disabled />
+            </div>
+
+            <input type="submit" value="Delete" class="btn btn-danger" />
+            <a asp-area="Administrator" asp-controller="Articles" asp-action="Index" class="btn btn-default">Cancel</a>
+        </form>
+    </div>
+</div>

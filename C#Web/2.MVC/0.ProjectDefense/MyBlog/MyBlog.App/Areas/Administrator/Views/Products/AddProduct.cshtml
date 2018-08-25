@@ -1,0 +1,42 @@
+﻿@model AddProductBindingModel
+@{
+    ViewData[CommonConstants.TitleSuffix] = "Add Product";
+}
+
+<h2>Create Product</h2>
+<br />
+<form asp-area="Administrator" asp-controller="Products" asp-action="AddProduct" method="post">
+    @Html.FormGroupFor(model => model.ProductName)
+    @Html.FormGroupFor(model => model.Description)
+    @Html.FormGroupFor(model => model.Price)
+    @Html.FormGroupFor(model => model.PhotoURL)
+    @Html.FormGroupFor(model => model.HighLightVideoURL)
+    @Html.FormGroupFor(model => model.AdditionalInfoURL)
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="control-label col-sm-2">
+                <label asp-for="BrandId">Brand</label>
+            </div>
+            <div><select asp-for="BrandId" asp-items="Model.AllBrands" class="form-control"></select></div>
+            <br />
+            <div class="control-label col-sm-2">
+                <label asp-for="ProductTypeId">Product Type</label>
+            </div>
+            <div>
+                <select asp-for="ProductTypeId" asp-items="Model.AllProductTypes" class="form-control"></select>
+            </div>
+        </div>
+    </div>
+    <br />
+
+    <div class="form-group">
+        <div class="col-sm-push-2">
+            <input type="submit" value="Create" class="btn btn-success" />
+            <a asp-area="Administrator" asp-controller="Products" asp-action="Index" class="btn btn-default">Cancel</a>
+        </div>
+    </div>
+</form>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

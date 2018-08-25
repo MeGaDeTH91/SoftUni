@@ -1,0 +1,10 @@
+﻿@model BookConciseViewModel
+
+<tr>
+    <td>@Model.Id</td>
+    <td><a asp-page="/Books/BookDetails" asp-route-id="@Model.Id">@Model.Title</a></td>
+    <td>
+        <a asp-area="" asp-page="/Books/BookDetails" asp-route-id="@Model.Id"
+           class="btn btn-default">Details</a>
+    </td>
+</tr>

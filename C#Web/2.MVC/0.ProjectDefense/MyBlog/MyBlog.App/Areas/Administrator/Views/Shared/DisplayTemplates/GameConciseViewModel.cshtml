@@ -1,0 +1,18 @@
+﻿@model GameConciseViewModel
+
+<tr>
+    <td>@Model.Id</td>
+    <td><a asp-page="/Games/GameDetails" asp-route-id="@Model.Id">@Model.GameName</a></td>
+    <td>
+        <a asp-area="Administrator" asp-page="/Games/GameDetails" asp-route-id="@Model.Id"
+           class="btn btn-default">Details</a>
+        <a asp-area="Administrator" asp-controller="Games" asp-action="EditGame" asp-route-id="@Model.Id"
+           class="btn btn-warning">
+            Edit
+        </a>
+        <a asp-area="Administrator" asp-controller="Games" asp-action="DeleteGame" asp-route-id="@Model.Id"
+           class="btn btn-danger">
+            Delete
+        </a>
+    </td>
+</tr>

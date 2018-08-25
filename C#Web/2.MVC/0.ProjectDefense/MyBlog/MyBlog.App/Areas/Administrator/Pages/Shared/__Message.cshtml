@@ -1,0 +1,7 @@
+﻿<div class="text-center">
+    @if (TempData.ContainsKey(CommonConstants.LayoutMessageKey))
+    {
+        var message = TempData.Get<MessageModel>(CommonConstants.LayoutMessageKey);
+        <message type="@message.Type" message="@message.Message"></message>
+    }
+</div>

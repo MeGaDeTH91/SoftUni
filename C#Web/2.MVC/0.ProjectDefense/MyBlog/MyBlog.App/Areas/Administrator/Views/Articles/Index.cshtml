@@ -1,0 +1,28 @@
+﻿@model IEnumerable<ArticleConciseViewModel>
+@{
+    ViewData["Title"] = "Articles list";
+}
+
+
+<br />
+<div class="form-group">
+    <div class="col-sm-push-2">
+        <a asp-area="Administrator" asp-controller="Articles" asp-action="AddArticle" class="btn btn-success">Add new article</a>
+        <a asp-area="Administrator" asp-controller="Articles" asp-action="AddArticleCategory" class="btn btn-success">Add new article category</a>
+    </div>
+</div>
+<h2>Articles:</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>#Id</th>
+            <th>Title</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @Html.DisplayForModel()
+    </tbody>
+</table>
+
+

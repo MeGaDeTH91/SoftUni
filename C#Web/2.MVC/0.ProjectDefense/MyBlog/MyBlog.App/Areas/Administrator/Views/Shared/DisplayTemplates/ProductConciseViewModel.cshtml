@@ -1,0 +1,18 @@
+﻿@model ProductConciseViewModel
+
+<tr>
+    <td>@Model.Id</td>
+    <td><a asp-page="/Products/ProductDetails" asp-route-id="@Model.Id">@Model.ProductName</a></td>
+    <td>
+        <a asp-area="Administrator" asp-page="/Products/ProductDetails" asp-route-id="@Model.Id"
+           class="btn btn-default">Details</a>
+        <a asp-area="Administrator" asp-controller="Products" asp-action="EditProduct" asp-route-id="@Model.Id"
+           class="btn btn-warning">
+            Edit
+        </a>
+        <a asp-area="Administrator" asp-controller="Products" asp-action="DeleteProduct" asp-route-id="@Model.Id"
+           class="btn btn-danger">
+            Delete
+        </a>
+    </td>
+</tr>

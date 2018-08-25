@@ -1,0 +1,18 @@
+﻿@model InstrumentConciseViewModel
+
+<tr>
+    <td>@Model.Id</td>
+    <td><a asp-page="/Music/InstrumentDetails" asp-route-id="@Model.Id">@Model.ModelName</a></td>
+    <td>
+        <a asp-area="Administrator" asp-page="/Music/InstrumentDetails" asp-route-id="@Model.Id"
+           class="btn btn-default">Details</a>
+        <a asp-area="Administrator" asp-controller="Instruments" asp-action="EditInstrument" asp-route-id="@Model.Id"
+           class="btn btn-warning">
+            Edit
+        </a>
+        <a asp-area="Administrator" asp-controller="Instruments" asp-action="DeleteInstrument" asp-route-id="@Model.Id"
+           class="btn btn-danger">
+            Delete
+        </a>
+    </td>
+</tr>

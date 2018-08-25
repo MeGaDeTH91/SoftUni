@@ -1,0 +1,38 @@
+﻿@model GameDetailsViewModel
+@{
+    ViewData["Title"] = "Delete Game";
+}
+
+<h2>Delete Game - @Model.GameName</h2>
+
+<div class="container row">
+    <div class="col-12">
+        <br />
+        <form method="post">
+            <div class="form-group row">
+                <label class="form-control-label">GameName</label>
+                <input class="form-control" name="GameName" placeholder="Enter Game Name" value="@Model.GameName" disabled />
+            </div>
+
+            <div class="form-group row">
+                <label class="form-control-label">Game Description</label>
+                <textarea class="form-control" name="Description" placeholder="Game Description" minlength="15" disabled>@Model.Description</textarea>
+            </div>
+            <div class="form-group row">
+                <label class="form-control-label">Video URL</label>
+                <input type="url" class="form-control" name="HighLightVideoURL" placeholder="Enter URL to Video" value="@Model.HighLightVideoURL" disabled />
+            </div>
+            <div class="form-group row">
+                <label class="form-control-label">Game Image URL</label>
+                <input type="url" class="form-control" name="PhotoURL" placeholder="Enter URL to Image" value="@Model.PhotoURL" disabled />
+            </div>
+            <div class="form-group row">
+                <label class="form-control-label">Additional Info URL</label>
+                <input type="url" class="form-control" name="AdditionalInfoURL" placeholder="Enter URL for Additional Info" value="@Model.AdditionalInfoURL" disabled />
+            </div>
+
+            <input type="submit" value="Delete" class="btn btn-danger" />
+            <a asp-area="Administrator" asp-controller="Games" asp-action="Index" class="btn btn-default">Cancel</a>
+        </form>
+    </div>
+</div>

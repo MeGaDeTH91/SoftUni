@@ -1,0 +1,37 @@
+﻿@page
+@model BrandDetailsModel
+@{
+    ViewData["Title"] = "Brand Details";
+}
+
+<div class="row">
+    <div class="col-3">
+        <img class="img-thumbnail" src="@Model.BrandDetailsViewModel.BrandImageURL" alt="@Model.BrandDetailsViewModel.BrandImageURL Image" />
+    </div>
+    <div class="col-9">
+
+        <div class="h2">@Model.BrandDetailsViewModel.BrandName</div>
+        <h5>
+            Category: <a asp-area="Administrator" asp-controller="Brands" asp-action="BrandTypeDetails" asp-route-id="@Model.BrandDetailsViewModel.BrandTypeId">
+                @Model.BrandDetailsViewModel.BrandType.TypeName
+            </a>
+        </h5>
+        <text>
+            @Model.BrandDetailsViewModel.BrandDescription
+        </text>
+        <br />
+        <div>
+            <a href="@Model.BrandDetailsViewModel.AdditionalInfoURL">Click here for Additional information</a>
+        </div>
+        <div class="h3">Number of likes: @Model.Likes</div>
+    </div>
+    <br />
+    <a asp-area="" asp-controller="Brands" asp-action="Index" class="btn btn-success">Back to All Brands</a>
+    <a asp-area="" asp-controller="Games" asp-action="Index" class="btn btn-success">All Games</a>
+    <a asp-area="" asp-controller="Instruments" asp-action="Index" class="btn btn-success">All Instruments</a>
+    <a asp-area="" asp-controller="Products" asp-action="Index" class="btn btn-success">All Products</a>
+    <a asp-area="" asp-controller="Brands" asp-action="AddToFavourites" asp-route-id="@Model.BrandId"
+       class="btn btn-info">
+        Add To Favourites
+    </a>
+</div>

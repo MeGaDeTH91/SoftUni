@@ -1,0 +1,18 @@
+﻿@model BrandConciseViewModel
+
+<tr>
+    <td>@Model.Id</td>
+    <td><a asp-page="/Brands/BrandDetails" asp-route-id="@Model.Id">@Model.BrandName</a></td>
+    <td>
+        <a asp-area="Administrator" asp-page="/Brands/BrandDetails" asp-route-id="@Model.Id"
+           class="btn btn-default">Details</a>
+        <a asp-area="Administrator" asp-controller="Brands" asp-action="EditBrand" asp-route-id="@Model.Id"
+           class="btn btn-warning">
+            Edit
+        </a>
+        <a asp-area="Administrator" asp-controller="Brands" asp-action="DeleteBrand" asp-route-id="@Model.Id"
+           class="btn btn-danger">
+            Delete
+        </a>
+    </td>
+</tr>

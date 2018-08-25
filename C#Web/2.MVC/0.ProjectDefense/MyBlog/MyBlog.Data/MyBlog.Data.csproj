@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20180804101911_Initial.cs" />
+    <Compile Remove="Migrations\20180804104427_Initial.cs" />
+    <Compile Remove="Migrations\20180804214105_Initial.cs" />
+    <Compile Remove="Migrations\20180813174353_Initial.cs" />
+    <Compile Remove="Migrations\20180813185742_Initial.cs" />
+    <Compile Remove="Migrations\20180813205733_Initial.cs" />
+    <Compile Remove="Migrations\20180814111701_Initial.cs" />
+    <Compile Remove="Migrations\20180814120126_Initial.cs" />
+    <Compile Remove="Migrations\20180818124429_Initial.cs" />
+    <Compile Remove="Migrations\20180818125458_ArticleTitle.cs" />
+    <Compile Remove="Migrations\20180821090934_FixedColumn.cs" />
+    <Compile Remove="Migrations\20180823103754_CreatorIdInProductsFix.cs" />
+    <Compile Remove="Migrations\20180823120036_CreatorIdInProductsRemoveFix.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="2.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.1.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MyBlog.Models\MyBlog.Models.csproj" />
+  </ItemGroup>
+
+</Project>

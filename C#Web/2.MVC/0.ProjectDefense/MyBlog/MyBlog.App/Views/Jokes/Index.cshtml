@@ -1,0 +1,20 @@
+﻿@model IEnumerable<JokeConciseViewModel>
+@{
+    ViewData["Title"] = "Jokes list";
+}
+
+<h2>Jokes:</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>#Id</th>
+            <th>Joke Title</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @Html.DisplayForModel()
+    </tbody>
+</table>
+
+

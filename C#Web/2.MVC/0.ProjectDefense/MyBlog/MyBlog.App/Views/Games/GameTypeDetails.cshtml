@@ -1,0 +1,13 @@
+﻿@model GameTypeViewModel
+@{
+    ViewData["Title"] = "Game Types";
+}
+
+<h2>Type <i class="bg-danger">@Model.GameTypeName</i> - Games</h2>
+
+<ul>
+    @foreach (var game in Model.Games)
+    {
+        <li><a asp-page="/Games/GameDetails" asp-route-id="@game.Id">@game.GameName</a></li>
+    }
+</ul>

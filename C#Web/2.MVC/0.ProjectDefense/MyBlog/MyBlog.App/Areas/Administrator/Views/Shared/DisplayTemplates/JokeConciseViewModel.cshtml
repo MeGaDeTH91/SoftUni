@@ -1,0 +1,18 @@
+﻿@model JokeConciseViewModel
+
+<tr>
+    <td>@Model.Id</td>
+    <td><a asp-page="/Fun/JokeDetails" asp-route-id="@Model.Id">@Model.Title</a></td>
+    <td>
+        <a asp-area="Administrator" asp-page="/Fun/JokeDetails" asp-route-id="@Model.Id"
+           class="btn btn-default">Details</a>
+        <a asp-area="Administrator" asp-controller="Jokes" asp-action="EditJoke" asp-route-id="@Model.Id"
+           class="btn btn-warning">
+            Edit
+        </a>
+        <a asp-area="Administrator" asp-controller="Jokes" asp-action="DeleteJoke" asp-route-id="@Model.Id"
+           class="btn btn-danger">
+            Delete
+        </a>
+    </td>
+</tr>

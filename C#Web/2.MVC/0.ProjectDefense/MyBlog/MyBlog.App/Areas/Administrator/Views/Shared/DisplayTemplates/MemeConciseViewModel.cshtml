@@ -1,0 +1,18 @@
+﻿@model MemeConciseViewModel
+
+<tr>
+    <td>@Model.Id</td>
+    <td><a asp-page="/Fun/MemeDetails" asp-route-id="@Model.Id">@Model.Title</a></td>
+    <td>
+        <a asp-area="Administrator" asp-page="/Fun/MemeDetails" asp-route-id="@Model.Id"
+           class="btn btn-default">Details</a>
+        <a asp-area="Administrator" asp-controller="Memes" asp-action="EditMeme" asp-route-id="@Model.Id"
+           class="btn btn-warning">
+            Edit
+        </a>
+        <a asp-area="Administrator" asp-controller="Memes" asp-action="DeleteMeme" asp-route-id="@Model.Id"
+           class="btn btn-danger">
+            Delete
+        </a>
+    </td>
+</tr>

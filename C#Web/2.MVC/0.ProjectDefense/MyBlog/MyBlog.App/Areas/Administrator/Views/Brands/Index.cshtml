@@ -1,0 +1,28 @@
+﻿@model IEnumerable<BrandConciseViewModel>
+@{
+    ViewData["Title"] = "Brands list";
+}
+
+
+<br />
+<div class="form-group">
+    <div class="col-sm-push-2">
+        <a asp-area="Administrator" asp-controller="Brands" asp-action="AddBrand" class="btn btn-success">Add new Brand</a>
+        <a asp-area="Administrator" asp-controller="Brands" asp-action="AddBrandType" class="btn btn-success">Add new BrandType</a>
+    </div>
+</div>
+<h2>Brands:</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>#Id</th>
+            <th>Brand Name</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @Html.DisplayForModel()
+    </tbody>
+</table>
+
+

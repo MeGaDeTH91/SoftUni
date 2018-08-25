@@ -1,0 +1,13 @@
+﻿@model ArticlesCategoryViewModel
+@{
+    ViewData["Title"] = "Category Articles";
+}
+
+<h2>Category <i class="bg-danger">@Model.CategoryName</i> - Articles</h2>
+
+<ul>
+    @foreach (var article in Model.Articles)
+    {
+        <li><a asp-page="/Articles/Details" asp-route-id="@article.Id">@article.Title</a></li>
+    }
+</ul>

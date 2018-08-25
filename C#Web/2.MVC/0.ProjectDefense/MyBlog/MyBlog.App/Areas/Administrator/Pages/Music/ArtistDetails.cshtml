@@ -1,0 +1,52 @@
+﻿@page
+@model ArtistDetailsModel
+@{
+    ViewData["Title"] = "Artist Details";
+}
+
+<div class="row">
+    <div class="col-3">
+        <img class="img-thumbnail" src="@Model.ArtistDetailsViewModel.PhotoURL" alt="@Model.ArtistDetailsViewModel.PhotoURL Image" />
+    </div>
+    <div class="col-9">
+
+        <div class="h2">@Model.ArtistDetailsViewModel.FullName</div>
+        <h5>
+            Artist type: <a asp-area="Administrator" asp-controller="Artists" asp-action="ArtistTypeDetails" asp-route-id="@Model.ArtistDetailsViewModel.ArtistTypeId">
+                @Model.ArtistDetailsViewModel.ArtistType.ArtistTypeName
+            </a>
+        </h5>
+        <text>
+            @Model.ArtistDetailsViewModel.Description
+        </text>
+        <br />
+        <div>
+            <a href="@Model.ArtistDetailsViewModel.AdditionalInfoURL">Click here for Additional information</a>
+        </div>
+        <br />
+        <div>
+            <iframe width="560" height="315"
+                    src="@Model.ArtistDetailsViewModel.HighLightVideoURL"
+                    frameborder="0" allow="autoplay; encrypted-media"
+                    allowfullscreen></iframe>
+        </div>
+    </div>
+    <br />
+    <a asp-area="Administrator" asp-controller="Artists" asp-action="Index" class="btn btn-primary">Back to All Artists</a>
+
+    <a asp-area="Administrator" asp-controller="Artists" asp-action="EditArtist" asp-route-id="@Model.ArtistId"
+       class="btn btn-warning">
+        Edit
+    </a>
+    <a asp-area="Administrator" asp-controller="Artists" asp-action="DeleteArtist" asp-route-id="@Model.ArtistId"
+       class="btn btn-danger">
+        Delete
+    </a>
+    <br />
+    <br />
+    Song list:
+    @foreach (var song in Model.ArtistDetailsViewModel.Songs)
+    {
+        <div class="row"><a asp-page="/Music/SongDetails" asp-route-id="@song.Id">@song.SongName</a></div>
+    }
+</div>

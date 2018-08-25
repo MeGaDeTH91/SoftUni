@@ -1,0 +1,39 @@
+﻿@model AddSongBindingModel
+@{
+    ViewData[CommonConstants.TitleSuffix] = "Add Song";
+}
+
+<h2>Create Song</h2>
+<br />
+<form asp-area="Administrator" asp-controller="Songs" asp-action="AddSong" method="post">
+    @Html.FormGroupFor(model => model.SongName)
+    @Html.FormGroupFor(model => model.Description)
+    @Html.FormGroupFor(model => model.PhotoURL)
+    @Html.FormGroupFor(model => model.HighLightVideoURL)
+    @Html.FormGroupFor(model => model.AdditionalInfoURL)
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="control-label col-sm-2">
+                <label asp-for="ArtistId">Artist</label>
+            </div>
+            <select asp-for="ArtistId" asp-items="Model.AllArtists" class="form-control"></select>
+            <br />
+            <div class="control-label col-sm-2">
+                <label asp-for="SongGenreId">Song Genre</label>
+            </div>
+            <select asp-for="SongGenreId" asp-items="Model.AllSongGenres" class="form-control"></select>
+        </div>
+    </div>
+    <br />
+
+    <div class="form-group">
+        <div class="col-sm-push-2">
+            <input type="submit" value="Create" class="btn btn-success" />
+            <a asp-area="Administrator" asp-controller="Songs" asp-action="Index" class="btn btn-default">Cancel</a>
+        </div>
+    </div>
+</form>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

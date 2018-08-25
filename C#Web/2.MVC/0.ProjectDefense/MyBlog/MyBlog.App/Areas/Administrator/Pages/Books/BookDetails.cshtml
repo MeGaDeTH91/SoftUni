@@ -1,0 +1,42 @@
+﻿@page
+@model BookDetailsModel
+@{
+    ViewData["Title"] = "Book Details";
+}
+
+<div class="row">
+    <div class="col-3">
+        <img class="img-thumbnail" width="560" height="300" src="@Model.BookDetailsViewModel.PhotoURL" alt="@Model.BookDetailsViewModel.PhotoURL Image" />
+    </div>
+    <div class="col-9">
+
+        <div class="h2">@Model.BookDetailsViewModel.Title</div>
+        <div class="h3">
+            <a asp-area="Administrator" asp-controller="Books" asp-action="BookAuthor" asp-route-id="@Model.BookAuthorId">@Model.BookDetailsViewModel.BookAuthor.FullName</a>
+        </div>
+        <h5>
+            Category: <a asp-area="Administrator" asp-controller="Books" asp-action="BookCategory" asp-route-id="@Model.BookCategoryId">
+                @Model.BookDetailsViewModel.BookCategory.BookCategoryName
+            </a>
+        </h5>
+        <text>
+            @Model.BookDetailsViewModel.Description
+        </text>
+        <br />
+        <div>
+            <a href="@Model.BookDetailsViewModel.AdditionalInfoURL">Click here for Additional information</a>
+        </div>
+    </div>
+    <br />
+
+    <a asp-area="Administrator" asp-controller="Books" asp-action="Index" class="btn btn-primary">Back to All Books</a>
+
+    <a asp-area="Administrator" asp-controller="Books" asp-action="EditBook" asp-route-id="@Model.BookId"
+       class="btn btn-warning">
+        Edit
+    </a>
+    <a asp-area="Administrator" asp-controller="Books" asp-action="DeleteBook" asp-route-id="@Model.BookId"
+       class="btn btn-danger">
+        Delete
+    </a>
+</div>

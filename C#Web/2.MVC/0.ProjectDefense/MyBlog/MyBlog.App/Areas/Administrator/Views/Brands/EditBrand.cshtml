@@ -1,0 +1,12 @@
+﻿@model BrandDetailsViewModel
+@{
+    ViewData["Title"] = "Edit Brand";
+}
+
+<h2>Edit Brand - @Model.BrandName</h2>
+
+@Html.EditorForModel()
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

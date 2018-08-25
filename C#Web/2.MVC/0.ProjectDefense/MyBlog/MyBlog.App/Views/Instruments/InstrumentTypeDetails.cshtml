@@ -1,0 +1,13 @@
+﻿@model InstrumentTypeViewModel
+@{
+    ViewData["Title"] = "Instrument Types";
+}
+
+<h2>Type <i class="bg-danger">@Model.TypeName</i> - Instruments</h2>
+
+<ul>
+    @foreach (var instrument in Model.Instruments)
+    {
+        <li><a asp-page="/Music/InstrumentDetails" asp-route-id="@instrument.Id">@instrument.ModelName</a></li>
+    }
+</ul>

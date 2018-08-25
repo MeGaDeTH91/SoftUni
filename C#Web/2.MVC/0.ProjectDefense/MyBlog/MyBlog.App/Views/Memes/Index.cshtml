@@ -1,0 +1,20 @@
+﻿@model IEnumerable<MemeConciseViewModel>
+    @{
+        ViewData["Title"] = "Memes list";
+    }
+
+    <h2>Memes:</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>#Id</th>
+                <th>Meme Title</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @Html.DisplayForModel()
+        </tbody>
+    </table>
+
+

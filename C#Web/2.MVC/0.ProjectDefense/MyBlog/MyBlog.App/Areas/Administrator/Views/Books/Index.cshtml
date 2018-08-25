@@ -1,0 +1,27 @@
+﻿@model IEnumerable<BookConciseViewModel>
+@{
+    ViewData["Title"] = "Books list";
+}
+
+
+<br />
+<div class="form-group">
+    <div class="col-sm-push-2">
+        <a asp-area="Administrator" asp-controller="Books" asp-action="AddBook" class="btn btn-success">Add new book</a>
+        <a asp-area="Administrator" asp-controller="Books" asp-action="AddBookAuthor" class="btn btn-success">Add new book author</a>
+        <a asp-area="Administrator" asp-controller="Books" asp-action="AddBookCategory" class="btn btn-success">Add new book category</a>
+    </div>
+</div>
+<h2>Books:</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>#Id</th>
+            <th>Title</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @Html.DisplayForModel()
+    </tbody>
+</table>

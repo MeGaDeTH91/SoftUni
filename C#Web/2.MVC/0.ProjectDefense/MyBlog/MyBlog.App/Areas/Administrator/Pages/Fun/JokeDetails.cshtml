@@ -1,0 +1,29 @@
+﻿@page
+@model JokeDetailsModel
+@{
+    ViewData["Title"] = "Joke Details";
+}
+
+<div class="row">
+    <div class="col-3">
+        <img class="img-thumbnail" src="@Model.JokeDetailsViewModel.PhotoURL" alt="@Model.JokeDetailsViewModel.PhotoURL Image" />
+    </div>
+    <div class="col-9">
+        <div class="h2">@Model.JokeDetailsViewModel.Title</div>
+    </div>
+    <br />
+    <text>
+        @Model.JokeDetailsViewModel.Content
+    </text>
+    <br />
+    <a asp-area="Administrator" asp-controller="Jokes" asp-action="Index" class="btn btn-primary">Back to All Jokes</a>
+
+    <a asp-area="Administrator" asp-controller="Jokes" asp-action="EditJoke" asp-route-id="@Model.JokeId"
+       class="btn btn-warning">
+        Edit
+    </a>
+    <a asp-area="Administrator" asp-controller="Jokes" asp-action="DeleteJoke" asp-route-id="@Model.JokeId"
+       class="btn btn-danger">
+        Delete
+    </a>
+</div>

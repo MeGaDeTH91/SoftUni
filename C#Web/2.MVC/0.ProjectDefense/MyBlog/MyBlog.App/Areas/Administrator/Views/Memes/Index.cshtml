@@ -1,0 +1,26 @@
+﻿@model IEnumerable<MemeConciseViewModel>
+    @{
+        ViewData["Title"] = "Memes list";
+    }
+
+    <br />
+    <div class="form-group">
+        <div class="col-sm-push-2">
+            <a asp-area="Administrator" asp-controller="Memes" asp-action="AddMeme" class="btn btn-success">Add new Meme</a>
+        </div>
+    </div>
+    <h2>Memes:</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>#Id</th>
+                <th>Meme Title</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @Html.DisplayForModel()
+        </tbody>
+    </table>
+
+

@@ -1,0 +1,10 @@
+﻿@model BrandConciseViewModel
+
+<tr>
+    <td>@Model.Id</td>
+    <td><a asp-page="/Brands/BrandDetails" asp-route-id="@Model.Id">@Model.BrandName</a></td>
+    <td>
+        <a asp-area="" asp-page="/Brands/BrandDetails" asp-route-id="@Model.Id"
+           class="btn btn-default">Details</a>
+    </td>
+</tr>

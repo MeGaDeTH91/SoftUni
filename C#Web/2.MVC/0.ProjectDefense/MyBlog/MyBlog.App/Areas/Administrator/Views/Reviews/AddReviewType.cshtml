@@ -1,0 +1,21 @@
+﻿@model AddReviewTypeBindingModel
+@{
+    ViewData["Title"] = "Add Review Type";
+}
+
+<h2>Add Type For Reviews</h2>
+<br />
+
+<form asp-area="Administrator" asp-controller="Reviews" asp-action="AddReviewType" method="post">
+    @Html.FormGroupFor(model => model.ReviewTypeName)
+
+    <div class="form-group">
+        <div class="col-sm-push-2">
+            <input type="submit" value="Create" class="btn btn-success" />
+            <a asp-area="Administrator" asp-controller="Reviews" asp-action="Index" class="btn btn-default">Cancel</a>
+        </div>
+    </div>
+</form>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,28 @@
+﻿@model IEnumerable<SongConciseViewModel>
+@{
+    ViewData["Title"] = "Songs list";
+}
+
+
+<br />
+<div class="form-group">
+    <div class="col-sm-push-2">
+        <a asp-area="Administrator" asp-controller="Songs" asp-action="AddSong" class="btn btn-success">Add new Song</a>
+        <a asp-area="Administrator" asp-controller="Songs" asp-action="AddSongGenre" class="btn btn-success">Add new Song Genre</a>
+    </div>
+</div>
+<h2>Songs:</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>#Id</th>
+            <th>Song Name</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @Html.DisplayForModel()
+    </tbody>
+</table>
+
+

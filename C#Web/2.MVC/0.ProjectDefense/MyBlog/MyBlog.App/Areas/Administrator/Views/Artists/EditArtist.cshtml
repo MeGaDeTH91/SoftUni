@@ -1,0 +1,12 @@
+﻿@model ArtistDetailsViewModel
+@{
+    ViewData["Title"] = "Edit Artist";
+}
+
+<h2>Edit Artist - @Model.FullName</h2>
+
+@Html.EditorForModel()
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

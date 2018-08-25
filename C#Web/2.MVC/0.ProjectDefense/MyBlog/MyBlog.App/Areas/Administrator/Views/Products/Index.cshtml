@@ -1,0 +1,28 @@
+﻿@model IEnumerable<ProductConciseViewModel>
+@{
+    ViewData["Title"] = "Products list";
+}
+
+
+<br />
+<div class="form-group">
+    <div class="col-sm-push-2">
+        <a asp-area="Administrator" asp-controller="Products" asp-action="AddProduct" class="btn btn-success">Add new Product</a>
+        <a asp-area="Administrator" asp-controller="Products" asp-action="AddProductType" class="btn btn-success">Add new Product Type</a>
+    </div>
+</div>
+<h2>Products:</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>#Id</th>
+            <th>Product Name</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @Html.DisplayForModel()
+    </tbody>
+</table>
+
+

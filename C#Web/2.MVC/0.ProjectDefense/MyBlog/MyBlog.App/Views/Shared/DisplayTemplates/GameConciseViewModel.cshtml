@@ -1,0 +1,10 @@
+﻿@model GameConciseViewModel
+
+<tr>
+    <td>@Model.Id</td>
+    <td><a asp-page="/Games/GameDetails" asp-route-id="@Model.Id">@Model.GameName</a></td>
+    <td>
+        <a asp-area="" asp-page="/Games/GameDetails" asp-route-id="@Model.Id"
+           class="btn btn-default">Details</a>
+    </td>
+</tr>

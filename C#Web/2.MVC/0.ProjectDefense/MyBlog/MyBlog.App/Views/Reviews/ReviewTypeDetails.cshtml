@@ -1,0 +1,13 @@
+﻿@model ReviewTypeViewModel
+@{
+    ViewData["Title"] = "Review Types";
+}
+
+<h2>Type <i class="bg-danger">@Model.ReviewTypeName</i> - Reviews</h2>
+
+<ul>
+    @foreach (var review in Model.Reviews)
+    {
+        <li><a asp-page="/Reviews/ReviewDetails" asp-route-id="@review.Id">@review.Title</a></li>
+    }
+</ul>

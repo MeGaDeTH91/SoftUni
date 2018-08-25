@@ -1,0 +1,18 @@
+﻿@model UserConciseViewModel
+
+<tr>
+    <td><a asp-page="/Users/UserDetails" asp-route-id="@Model.Id">@Model.Username</a></td>
+    <td>@Model.Email</td>
+    <td>
+        <a asp-area="Owner" asp-page="/Users/UserDetails" asp-route-id="@Model.Id"
+           class="btn btn-default">Details</a>
+        <a asp-area="Owner" asp-controller="Home" asp-action="MakeAdmin" asp-route-id="@Model.Id"
+           class="btn btn-success">
+            Give admin status
+        </a>
+        <a asp-area="Owner" asp-controller="Home" asp-action="RemoveAdmin" asp-route-id="@Model.Id"
+           class="btn btn-warning">
+            Remove admin status
+        </a>
+    </td>
+</tr>

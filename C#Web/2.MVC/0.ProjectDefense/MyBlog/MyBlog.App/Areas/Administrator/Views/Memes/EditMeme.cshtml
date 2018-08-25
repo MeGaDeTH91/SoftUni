@@ -1,0 +1,12 @@
+﻿@model MemeDetailsViewModel
+@{
+    ViewData["Title"] = "Edit Meme";
+}
+
+<h2>Edit Meme - @Model.Title</h2>
+
+@Html.EditorForModel()
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

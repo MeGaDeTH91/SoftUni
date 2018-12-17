@@ -1,0 +1,11 @@
+{{> navbar}}
+<section class="deletePet">
+    <h3>{{name}}</h3>
+    <p>Pet counter: <i class="fas fa-heart"></i> {{hearts}}</p>
+    <p class="img"><img src="{{imageURL}}"></p>
+    <form action="#/delete-pet/{{_id}}" method="POST">
+        <p class="description">{{description}}</p>
+        <button class="button">Delete</button>
+    </form>
+</section>
+{{> footer}}

@@ -1,0 +1,32 @@
+<h2>Login to your account:</h2>
+<form id="formLogin" action="#/login" method="POST">
+    <label>Username:</label>
+    <input type="text" name="username" placeholder="Enter your Email" >
+    <label>Password:</label>
+    <input type="password" name="pass" placeholder="Enter your Password">
+    <input type="submit" class="login" value="Login">
+</form>
+<script>
+    $(function () {
+        $('#formLogin').on('submit', function (ev) {
+            let isValid = true;
+            let username = $('input[name=username]').val();
+            let password = $('input[name=pass]').val();
+            let message = '';
+
+            if(!username || username.length < 5){
+                isValid = false;
+                message = 'Username must be 5 chars or more!';
+            } else if(!password){
+                isValid = false;
+                message = 'Password must be typed in!';
+            }
+
+            if(!isValid){
+                notify.showError(message);
+                ev.preventDefault();
+                ev.stopPropagation();
+            }
+        })
+    })
+</script>

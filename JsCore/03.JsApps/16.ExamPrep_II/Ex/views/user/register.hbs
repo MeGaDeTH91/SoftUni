@@ -1,0 +1,38 @@
+<h2>Create your account:</h2>
+<form id="formRegister" action="#/register" method="POST">
+    <label>Username:</label>
+    <input type="text" name="username" placeholder="Username" >
+    <label>Password:</label>
+    <input type="password" name="pass" placeholder="Password">
+    <label>Repeat Password:</label>
+    <input type="password" name="checkPass" placeholder="Repeat Password">
+    <input type="submit" class="register" value="Register">
+</form>
+<script>
+    $(function () {
+        $('#formRegister').on('submit', function (ev) {
+            let isValid = true;
+            let username = $('input[name=username]').val();
+            let password = $('input[name=pass]').val();
+            let checkPassword = $('input[name=checkPass]').val();
+            let message = '';
+
+            if(!username || username.length < 5){
+                isValid = false;
+                message = 'Username must be 5 chars or more!';
+            } else if(!password || !checkPassword){
+                isValid = false;
+                message = 'Password and repeat password must be typed in!';
+            } else if(password !== checkPassword){
+                isValid = false;
+                message = 'Password and repeat password do not match!';
+            }
+
+            if(!isValid){
+                notify.showError(message);
+                ev.preventDefault();
+                ev.stopPropagation();
+            }
+        })
+    })
+</script>

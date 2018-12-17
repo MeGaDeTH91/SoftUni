@@ -1,0 +1,49 @@
+<section id="viewAddFlight">
+    <h2>Add new flight</h2>
+    <form id="formAddFlight" action="#/flight/add" method="POST">
+        <label>Destination:</label>
+        <input type="text" name="destination" placeholder="Destination" >
+        <label>Origin:</label>
+        <input type="text" name="origin" placeholder="Origin">
+        <label>Departure Date:</label>
+        <input type="date" name="departureDate">
+        <label>Departure Time:</label>
+        <input type="time" name="departureTime">
+        <label>Number of Seats:</label>
+        <input type="number" name="seats" placeholder="0">
+        <label>Cost per seat:</label>
+        <input type="number" step="2" name="cost" placeholder="0.00">
+        <label>Image:</label>
+        <input type="text" name="img">
+        <label>Is Public:</label>
+        <input type="checkbox" name="public">
+
+        <input type="submit" class="create" value="Create">
+    </form>
+</section>
+<script>
+    $(function () {
+        $('#formAddFlight').on('submit', function (ev) {
+            let isValid = true;
+            let destination = $('input[name=destination]').val();
+            let origin = $('input[name=origin]').val();
+            let numberOfSeats = $('input[name=seats]').val();
+            let costPerSeat = $('input[name=cost]').val();
+            let message = '';
+
+            if(!destination || !origin){
+                isValid = false;
+                message = 'Origin and destination should be typed in!!';
+            } else if(numberOfSeats <= 0 || costPerSeat <= 0){
+                isValid = false;
+                message = 'Number of seats and cost per seat should be positive numbers!';
+            }
+
+            if(!isValid){
+                notify.showError(message);
+                ev.preventDefault();
+                ev.stopPropagation();
+            }
+        })
+    })
+</script>

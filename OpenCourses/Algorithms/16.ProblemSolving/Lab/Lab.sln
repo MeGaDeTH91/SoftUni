@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.329
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01.Blocks", "01.Blocks\01.Blocks.csproj", "{BD646C62-27C4-4D44-82E0-AD468D657F4D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.ZigZagMatrix", "02.ZigZagMatrix\02.ZigZagMatrix.csproj", "{FB482E37-D189-40E5-B09E-5129330F60CA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BD646C62-27C4-4D44-82E0-AD468D657F4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD646C62-27C4-4D44-82E0-AD468D657F4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD646C62-27C4-4D44-82E0-AD468D657F4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD646C62-27C4-4D44-82E0-AD468D657F4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB482E37-D189-40E5-B09E-5129330F60CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB482E37-D189-40E5-B09E-5129330F60CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB482E37-D189-40E5-B09E-5129330F60CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB482E37-D189-40E5-B09E-5129330F60CA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E6C6A8F7-E9F0-4E8B-93D7-C889B36765BD}
+	EndGlobalSection
+EndGlobal

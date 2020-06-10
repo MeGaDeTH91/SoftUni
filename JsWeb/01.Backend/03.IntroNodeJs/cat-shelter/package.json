@@ -1,0 +1,11 @@
+{
+  "name": "cat-shelter",
+  "version": "1.0.0",
+  "description": "Cat shelter application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Martin Taskov",
+  "license": "ISC"
+}

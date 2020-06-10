@@ -1,0 +1,31 @@
+[{
+    "id": "c671b2a4-6c5f-4fdb-96ed-70f459db45fc",
+    "name": "Gan356 Air SM",
+    "description": "Gan356 Air SM cube implementation",
+    "imageURL": "https://ae01.alicdn.com/kf/HTB1CSddXRxRMKJjy0Fdq6yifFXa6/Gan-356-Air-SM-3x3-Black-Magic-cube-GAN-Air-SM-Magnetic-3x3x3-Speed-cube-gans.jpg",
+    "difficulty": 3
+}, {
+    "id": "0f1dc6b9-c553-420c-a046-f8d4ca046e24",
+    "name": "Eco-Dark",
+    "description": "Eco-Dark cube implementation",
+    "imageURL": "https://i.pinimg.com/originals/d3/38/72/d33872e02a78fe191fcfd49ced3ce7cd.png",
+    "difficulty": 6
+}, {
+    "id": "6a25be03-8a0f-43bb-a613-d2a13c89d558",
+    "name": "Pyraminx",
+    "description": "Pyraminx cube implementation",
+    "imageURL": "https://images-na.ssl-images-amazon.com/images/I/61izOzq%2BBAL._SY355_.jpg",
+    "difficulty": 1
+}, {
+    "id": "93df7adb-7242-4117-8e79-07870df09c48",
+    "name": "Megaminx",
+    "description": "Megaminx cube implementation",
+    "imageURL": "https://images-na.ssl-images-amazon.com/images/I/61HpQqVQ37L._SY355_.jpg",
+    "difficulty": 10
+}, {
+    "id": "bb7e2bf9-c70b-43eb-9cd2-3707692bf93c",
+    "name": "AlabalaCube",
+    "description": "AlabalaCube3eeeee",
+    "imageURL": "https://smhttp-ssl-87586.nexcesscdn.net/media/catalog/product/cache/d836d0aca748fb9367c92871c4ca1707/C/F/CF6497P_001.jpg",
+    "difficulty": 5
+}]

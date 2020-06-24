@@ -1,0 +1,24 @@
+{
+  "name": "my-express-skeleton",
+  "version": "1.0.0",
+  "description": "ExpressJs skeleton structure",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "express-validator": "^6.6.0",
+    "mongoose": "^5.9.18",
+    "dotenv": "^8.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "bcrypt": "^5.0.0",
+    "cookie-parser": "^1.4.5"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.2"
+  },
+  "scripts": {
+    "start": "nodemon"
+  },
+  "author": "Martin Taskov",
+  "license": "ISC"
+}

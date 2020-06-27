@@ -1,7 +1,9 @@
-const home = require('./home')
-const users = require('./users')
+const home = require("./home");
+const users = require("./users");
+const notFound = require("./notFound");
 
 module.exports = {
-    home,
-    users
-}
+  home,
+  users,
+  notFound,
+};

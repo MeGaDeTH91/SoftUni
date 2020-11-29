@@ -1,0 +1,12 @@
+.thumbnail {
+    color: #b817a1;
+    border-radius: 6px;
+    display: block;
+}
+
+.thumbnail:hover {
+    background-color: #fce4d1;
+    color: #b82c17;
+    cursor: pointer;
+    font-style: italic;
+}

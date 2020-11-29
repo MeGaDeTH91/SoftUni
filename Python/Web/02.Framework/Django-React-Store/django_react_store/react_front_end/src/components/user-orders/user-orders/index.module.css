@@ -1,0 +1,34 @@
+.container {
+    width: 100%;
+    height: auto;
+    border: 1px solid #fde0c8;
+    margin-bottom: 3%;
+    border-radius: 4px;
+}
+
+.description {
+    word-wrap: break-word;
+    padding: 0.5%;
+    font-style: italic;
+    font-size: large;
+    /* border:1px solid blue; */
+    margin-bottom: 0.5%;
+    width: 95%;
+    display: inline-block;
+    vertical-align: top;
+    ;
+}
+
+.container div {
+    /* border:1px solid red; */
+    height: auto;
+    text-align: right;
+    padding-right: 2%;
+    margin-bottom: 0.5%;
+}
+
+.order-image {
+    width: 32px;
+    height: 32px;
+    vertical-align: bottom;
+}

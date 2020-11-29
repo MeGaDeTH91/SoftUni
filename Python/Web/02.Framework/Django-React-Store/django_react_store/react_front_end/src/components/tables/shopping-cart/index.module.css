@@ -1,0 +1,21 @@
+.table {
+    border-radius: 3%;
+    width: 100%;
+    border: 1px solid #ffdddd;
+    height: 20vh;
+}
+
+.row {
+    color: #f3cf9f;
+    border-bottom: solid;
+}
+
+.head {
+    border: 3px black;
+    color: orange;
+}
+
+.body {
+    border: 3px black;
+    color: grey;
+}

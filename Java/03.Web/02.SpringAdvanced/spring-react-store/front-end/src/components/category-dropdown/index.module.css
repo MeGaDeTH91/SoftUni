@@ -1,0 +1,18 @@
+.form-control-div {
+    width: 30%;
+    margin: 0 auto;
+    padding: 1%;
+    text-align: center;
+}
+
+.dropdown {
+    color: #b817a1;
+    background-color: #343a40 !important;
+    border-color: #17a2b8;
+}
+
+.label {
+    float: left;
+    width: 30%;
+    text-align: right;
+}

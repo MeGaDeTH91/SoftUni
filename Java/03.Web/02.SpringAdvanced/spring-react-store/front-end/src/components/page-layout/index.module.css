@@ -1,0 +1,28 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Miltonian+Tattoo&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-size: medium;
+    font-family: 'Miltonian Tattoo', cursive;
+} */
+
+.app {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.container {
+    text-align: center;
+    background-color: #fdfaf4;
+    height: auto;
+    box-shadow: 0 50vh 0 50vh #fdfaf4;
+}
+
+.inner-container {
+    display: inline-block;
+    width: 88%;
+    height: auto;
+    /* border:1px solid blue; */
+    margin-bottom: 5%;
+}
